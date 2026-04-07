@@ -20,8 +20,8 @@
                 </div>
             </div>
 
-            <div class="section-reveal rounded-[2rem] bg-white p-4 shadow-card dark:bg-slate-900/80 dark:ring-1 dark:ring-white/10 md:p-5">
-                @livewire('cita-form')
+            <div class="cori-panel section-reveal rounded-[2rem] p-4 shadow-card md:p-5">
+                @livewire(\App\Http\Livewire\CitaForm::class)
             </div>
         </div>
     </section>

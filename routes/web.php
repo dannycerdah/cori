@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\CitaController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contacto', [HomeController::class, 'contacto'])->name('contacto');
 Route::get('/citas', [HomeController::class, 'citas'])->name('citas');
+Route::post('/citas', [HomeController::class, 'storeCita'])->name('citas.store');
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);

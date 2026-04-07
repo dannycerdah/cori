@@ -148,10 +148,84 @@
 			width: 62%;
 		}
 
-		/* date / time picker icons readable in dark mode */
-		.dark input[type="date"],
-		.dark input[type="time"] {
-			color-scheme: dark;
+		/* ── Form field CSS variables (cambian con .dark en <html>) ── */
+		:root {
+			--fi-bg:          #f8fafc;
+			--fi-bg-focus:    #ffffff;
+			--fi-border:      #e2e8f0;
+			--fi-color:       #0f172a;
+			--fi-placeholder: #94a3b8;
+			--fi-label:       #475569;
+			--fi-scheme:      light;
+			--fi-panel-bg:    #ffffff;
+			--fi-panel-ring:  transparent;
+		}
+		html.dark {
+			--fi-bg:          #1e293b;
+			--fi-bg-focus:    #263348;
+			--fi-border:      #475569;
+			--fi-color:       #f1f5f9;
+			--fi-placeholder: #64748b;
+			--fi-label:       #cbd5e1;
+			--fi-scheme:      dark;
+			--fi-panel-bg:    #1e293b;
+			--fi-panel-ring:  rgba(255,255,255,0.08);
+		}
+
+		/* ── Form panel (card wrapper + inner form container) ─── */
+		.cori-panel {
+			background-color: var(--fi-panel-bg) !important;
+			outline: 1px solid var(--fi-panel-ring);
+			transition: background-color 0.3s ease, outline-color 0.3s ease;
+		}
+
+		/* ── Form field system ─────────────────────────────────── */
+		.cori-label {
+			display: flex;
+			align-items: center;
+			gap: 0.375rem;
+			margin-bottom: 0.5rem;
+			font-size: 0.8125rem;
+			font-weight: 600;
+			color: var(--fi-label);
+			letter-spacing: 0.01em;
+			transition: color 0.3s ease;
+		}
+
+		.cori-input {
+			width: 100%;
+			border-radius: 0.875rem;
+			border: 1.5px solid var(--fi-border);
+			background-color: var(--fi-bg) !important;
+			padding: 0.75rem 1rem;
+			font-size: 0.875rem;
+			line-height: 1.5;
+			color: var(--fi-color) !important;
+			color-scheme: var(--fi-scheme);
+			outline: none;
+			transition: border-color 0.2s ease, box-shadow 0.2s ease,
+			            background-color 0.3s ease, color 0.3s ease;
+		}
+		.cori-input::placeholder {
+			color: var(--fi-placeholder) !important;
+			opacity: 1;
+		}
+		.cori-input:focus {
+			border-color: #E63E8C;
+			background-color: var(--fi-bg-focus) !important;
+			box-shadow: 0 0 0 3px rgba(230, 62, 140, 0.18),
+			            0 0 0 1px rgba(230, 62, 140, 0.35);
+		}
+		.cori-input option {
+			background-color: var(--fi-bg);
+			color: var(--fi-color);
+		}
+		.cori-error {
+			display: block;
+			margin-top: 0.375rem;
+			font-size: 0.75rem;
+			color: #E63E8C;
+			font-weight: 500;
 		}
 
 		@media (prefers-reduced-motion: reduce) {
@@ -362,6 +436,19 @@
 
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
+			const restoreRaw = sessionStorage.getItem('cori-scroll-restore');
+			if (restoreRaw) {
+				try {
+					const restore = JSON.parse(restoreRaw);
+					if (restore && restore.path === window.location.pathname && Number.isFinite(restore.y)) {
+						window.scrollTo({ top: restore.y, behavior: 'auto' });
+					}
+				} catch (e) {
+					// Ignore invalid payload and continue normally.
+				}
+				sessionStorage.removeItem('cori-scroll-restore');
+			}
+
 			if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 				document.querySelectorAll('.section-reveal').forEach((element) => element.classList.add('is-visible'));
 				return;

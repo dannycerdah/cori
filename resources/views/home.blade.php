@@ -1,56 +1,56 @@
-@php
-	$clinicHighlights = [
-		['value' => '15+', 'label' => 'anos de experiencia'],
-		['value' => '24/7', 'label' => 'acompanamiento digital'],
-		['value' => '98%', 'label' => 'pacientes satisfechos'],
-	];
-
-	$doctorCards = [
-		[
-			'name' => 'Dra. Camila Rojas',
-			'specialty' => 'Cardiologia clinica',
-			'description' => 'Seguimiento preventivo y manejo integral para pacientes con factores de riesgo cardiovascular.',
-			'gradient' => 'from-brand-blue to-sky-400',
-			'initials' => 'CR',
-		],
-		[
-			'name' => 'Dr. Mateo Castillo',
-			'specialty' => 'Pediatria',
-			'description' => 'Controles de crecimiento, vacunacion y acompanamiento cercano durante las primeras etapas.',
-			'gradient' => 'from-brand-pink to-rose-300',
-			'initials' => 'MC',
-		],
-		[
-			'name' => 'Dra. Sofia Mendoza',
-			'specialty' => 'Diagnostico y laboratorio',
-			'description' => 'Procesos diagnosticos rapidos y precisos para acelerar decisiones medicas informadas.',
-			'gradient' => 'from-indigo-500 to-brand-blue',
-			'initials' => 'SM',
-		],
-	];
-
-	$testimonials = [
-		[
-			'quote' => 'La experiencia fue impecable. El equipo nos explico cada paso con claridad y nos sentimos acompanados en todo momento.',
-			'author' => 'Valeria P.',
-			'role' => 'Paciente de medicina preventiva',
-		],
-		[
-			'quote' => 'Reservar la cita fue rapido y la atencion del personal medico transmitio mucha seguridad y profesionalismo.',
-			'author' => 'Jorge M.',
-			'role' => 'Paciente de cardiologia',
-		],
-		[
-			'quote' => 'Clinica CORI combina tecnologia con trato humano. La comunicacion posterior a la consulta tambien fue excelente.',
-			'author' => 'Carolina S.',
-			'role' => 'Paciente de laboratorio clinico',
-		],
-	];
-@endphp
-
 @extends('layouts.app')
 
 @section('content')
+	@php
+		$clinicHighlights = [
+			['value' => '15+', 'label' => 'anos de experiencia'],
+			['value' => '24/7', 'label' => 'acompanamiento digital'],
+			['value' => '98%', 'label' => 'pacientes satisfechos'],
+		];
+
+		$doctorCards = [
+			[
+				'name' => 'Dra. Camila Rojas',
+				'specialty' => 'Cardiologia clinica',
+				'description' => 'Seguimiento preventivo y manejo integral para pacientes con factores de riesgo cardiovascular.',
+				'gradient' => 'from-brand-blue to-sky-400',
+				'initials' => 'CR',
+			],
+			[
+				'name' => 'Dr. Mateo Castillo',
+				'specialty' => 'Pediatria',
+				'description' => 'Controles de crecimiento, vacunacion y acompanamiento cercano durante las primeras etapas.',
+				'gradient' => 'from-brand-pink to-rose-300',
+				'initials' => 'MC',
+			],
+			[
+				'name' => 'Dra. Sofia Mendoza',
+				'specialty' => 'Diagnostico y laboratorio',
+				'description' => 'Procesos diagnosticos rapidos y precisos para acelerar decisiones medicas informadas.',
+				'gradient' => 'from-indigo-500 to-brand-blue',
+				'initials' => 'SM',
+			],
+		];
+
+		$testimonials = [
+			[
+				'quote' => 'La experiencia fue impecable. El equipo nos explico cada paso con claridad y nos sentimos acompanados en todo momento.',
+				'author' => 'Valeria P.',
+				'role' => 'Paciente de medicina preventiva',
+			],
+			[
+				'quote' => 'Reservar la cita fue rapido y la atencion del personal medico transmitio mucha seguridad y profesionalismo.',
+				'author' => 'Jorge M.',
+				'role' => 'Paciente de cardiologia',
+			],
+			[
+				'quote' => 'Clinica CORI combina tecnologia con trato humano. La comunicacion posterior a la consulta tambien fue excelente.',
+				'author' => 'Carolina S.',
+				'role' => 'Paciente de laboratorio clinico',
+			],
+		];
+	@endphp
+
 	<div class="pb-16">
 		<section id="inicio">
 			<livewire:hero />
@@ -161,8 +161,8 @@
 					</div>
 				</div>
 
-				<div class="rounded-[2rem] bg-white p-3 shadow-card dark:bg-slate-900/80 dark:ring-1 dark:ring-white/10 md:p-4">
-					@livewire('cita-form')
+				<div class="cori-panel rounded-[2rem] p-3 shadow-card md:p-4">
+					@livewire(\App\Http\Livewire\CitaForm::class)
 				</div>
 			</div>
 		</section>
