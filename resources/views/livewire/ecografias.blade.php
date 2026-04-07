@@ -1,25 +1,29 @@
 <section>
-    <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-text-dark mb-3">Ecografías Especializadas</h2>
-        <p class="text-text-muted max-w-xl mx-auto">Equipamiento de última generación para el control integral del embarazo y diagnóstico prenatal.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        @forelse($ecografias as $ecografia)
-            <div class="p-6 rounded-xl bg-white border border-slate-100 hover:shadow-md transition duration-200 hover:border-brand-purple">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg bg-brand-light flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-5 h-5 text-brand-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-semibold text-text-dark mb-1">{{ $ecografia->nombre }}</h3>
-                        <p class="text-text-muted text-sm leading-relaxed">{{ $ecografia->descripcion }}</p>
-                    </div>
-                </div>
-            </div>
-        @empty
-            <p class="text-center text-text-muted col-span-2 py-8">No hay ecografías disponibles.</p>
-        @endforelse
-    </div>
+	<div class="flex items-end justify-between gap-4">
+		<div>
+			<p class="text-sm font-semibold uppercase tracking-[0.26em] text-brand-pink">Imaging care</p>
+			<h3 class="mt-3 text-2xl font-bold text-brand-blue dark:text-white md:text-3xl">Ecografias y monitoreo avanzado</h3>
+		</div>
+		<p class="hidden max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300 md:block">Equipos modernos para control, seguimiento y diagnostico oportuno con una interfaz visual clara.</p>
+	</div>
+
+	<div class="mt-8 grid gap-6 md:grid-cols-2">
+		@forelse($ecografias as $ecografia)
+			<article class="rounded-[1.75rem] border border-brand-soft bg-white p-6 shadow-card transition duration-300 hover:border-brand-pink dark:border-white/10 dark:bg-slate-900">
+				<div class="flex items-start gap-4">
+					<div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-mist text-brand-pink dark:bg-white/5">
+						<svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3.75 8.25h16.5M7.5 3.75h9a3.75 3.75 0 013.75 3.75v9A3.75 3.75 0 0116.5 20.25h-9a3.75 3.75 0 01-3.75-3.75v-9A3.75 3.75 0 017.5 3.75zm3 7.5h3" />
+						</svg>
+					</div>
+					<div>
+						<h4 class="text-lg font-bold text-brand-blue dark:text-white">{{ $ecografia->nombre }}</h4>
+						<p class="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">{{ $ecografia->descripcion }}</p>
+					</div>
+				</div>
+			</article>
+		@empty
+			<p class="col-span-full rounded-[1.75rem] bg-white px-6 py-8 text-center text-sm text-slate-500 shadow-card dark:bg-slate-900 dark:text-slate-300">No hay ecografias disponibles.</p>
+		@endforelse
+	</div>
 </section>

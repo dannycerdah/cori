@@ -11,132 +11,63 @@
 		$heroImage = $rawHeroImage;
 	}
 
-	$heroTitle = $hero->title ?? 'Atención médica especializada para tu bienestar';
-	$heroSubtitle = $hero->subtitle ?? 'Atención integral, profesionales expertos y un acompañamiento cercano para cada etapa de tu cuidado.';
-	$primaryButtonText = $hero->button_text ?? 'Agendar Cita';
+	$heroTitle = $hero->title ?? 'Atencion moderna con la calidez y confianza que cada paciente espera';
+	$heroSubtitle = $hero->subtitle ?? 'Clinica CORI brinda atencion medica confiable con una experiencia digital clara, especialistas modernos y reserva adaptable.';
+	$primaryButtonText = $hero->button_text ?? 'Reservar cita';
 	$primaryButtonRoute = $hero->button_url ?? 'citas';
 @endphp
 
-<div class="hero-wrapper">
-	<section class="hero-modern relative isolate flex min-h-[70vh] items-center overflow-hidden text-white md:min-h-[80vh]" style="--hero-image: url('{{ $heroImage }}');">
-		<div class="hero-modern__background absolute inset-0" aria-hidden="true"></div>
-		<div class="hero-modern__overlay absolute inset-0" aria-hidden="true"></div>
-		
-		<div class="relative z-10 mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-			<div class="max-w-2xl">
-				<p class="hero-modern__badge">Atención médica especializada</p>
-				<h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
-					{{ $heroTitle }}
-				</h1>
-				<p class="mt-6 text-lg md:text-xl leading-relaxed text-white/90">
-					{{ $heroSubtitle }}
-				</p>
+<section class="relative isolate overflow-hidden">
+	<div class="absolute inset-0 bg-brand-light dark:bg-slate-950"></div>
+	<div class="absolute inset-x-0 top-0 h-[42rem] bg-gradient-to-br from-brand-blue via-brand-blue/90 to-brand-pink"></div>
+	<div class="absolute right-[-5rem] top-20 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+	<div class="absolute left-[-4rem] top-40 h-56 w-56 rounded-full bg-brand-pink/30 blur-3xl"></div>
 
-				<div class="mt-8 flex flex-col gap-3 sm:flex-row">
-					<a href="{{ route($primaryButtonRoute) }}" class="hero-modern__cta-primary inline-flex items-center justify-center px-8 py-3 rounded-xl font-semibold text-white transition duration-200 shadow-lg hover:shadow-xl">
-						{{ $primaryButtonText }}
-						<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-						</svg>
-					</a>
-					<a href="{{ url('/#servicios') }}" class="hero-modern__cta-secondary inline-flex items-center justify-center px-8 py-3 rounded-xl font-semibold text-white border border-white/30 hover:bg-white/10 transition duration-200">
-						Ver Servicios
-					</a>
+	<div class="relative mx-auto grid min-h-[84vh] w-full max-w-7xl gap-10 px-4 pb-24 pt-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-28 lg:pt-20">
+		<div class="flex flex-col justify-center text-white">
+			<div class="inline-flex w-fit items-center gap-3 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.28em] backdrop-blur">
+				<span class="h-2.5 w-2.5 rounded-full bg-brand-pink"></span>
+				Salud confiable
+			</div>
+
+			<h1 class="mt-8 max-w-3xl text-balance text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">{{ $heroTitle }}</h1>
+			<p class="mt-6 max-w-2xl text-lg leading-8 text-white/82 md:text-xl">{{ $heroSubtitle }}</p>
+
+			<div class="mt-10 flex flex-col gap-4 sm:flex-row">
+				<a href="{{ route($primaryButtonRoute) }}" class="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-blue shadow-glow transition hover:-translate-y-0.5 hover:bg-brand-mist">
+					{{ $primaryButtonText }}
+				</a>
+				<a href="{{ url('/#servicios') }}" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/15">
+					Ver servicios
+				</a>
+			</div>
+
+			<div class="mt-12 grid gap-4 sm:grid-cols-3">
+				<div class="rounded-[1.5rem] border border-white/10 bg-white/10 p-4 backdrop-blur">
+					<p class="text-2xl font-bold">+6k</p>
+					<p class="mt-1 text-sm text-white/72">consultas atendidas</p>
+				</div>
+				<div class="rounded-[1.5rem] border border-white/10 bg-white/10 p-4 backdrop-blur">
+					<p class="text-2xl font-bold">12</p>
+					<p class="mt-1 text-sm text-white/72">especialistas activos</p>
+				</div>
+				<div class="rounded-[1.5rem] border border-white/10 bg-white/10 p-4 backdrop-blur">
+					<p class="text-2xl font-bold">4.9/5</p>
+					<p class="mt-1 text-sm text-white/72">valoracion promedio</p>
 				</div>
 			</div>
 		</div>
 
-		<!-- Scroll Indicator -->
-		<div class="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 animate-bounce">
-			<svg class="h-6 w-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-			</svg>
+		<div class="flex items-center justify-center lg:justify-end">
+			<div class="glass-panel relative w-full max-w-xl overflow-hidden rounded-[2rem] border border-white/20 p-4 shadow-glow dark:border-white/10">
+				<div class="absolute inset-x-8 top-0 h-24 bg-gradient-to-b from-white/30 to-transparent"></div>
+				<img src="{{ $heroImage }}" alt="Clinica CORI" class="h-[29rem] w-full rounded-[1.6rem] object-cover object-center shadow-card md:h-[34rem]">
+				<div class="absolute bottom-9 left-9 right-9 rounded-[1.5rem] border border-white/25 bg-brand-blue/75 p-5 text-white backdrop-blur-xl">
+					<p class="text-sm font-semibold uppercase tracking-[0.24em] text-brand-mist">Clinica CORI</p>
+					<p class="mt-2 text-xl font-bold">Cuidado profesional, experiencia cercana e interfaz moderna.</p>
+					<p class="mt-2 text-sm leading-6 text-white/75">Paleta azul y rosa, animaciones suaves y acciones simples enfocadas en conversion.</p>
+				</div>
+			</div>
 		</div>
-	</section>
-
-@once
-	<style>
-		.hero-modern {
-			margin-left: calc(50% - 50vw);
-			margin-right: calc(50% - 50vw);
-			background: linear-gradient(135deg, #1f2937 0%, #1e293b 100%);
-		}
-
-		.hero-modern__background {
-			background-image: var(--hero-image);
-			background-position: center 60%;
-			background-repeat: no-repeat;
-			background-size: cover;
-			opacity: 0.3;
-		}
-
-		.hero-modern__overlay {
-			background: linear-gradient(135deg, rgba(31, 41, 55, 0.85) 0%, rgba(30, 41, 59, 0.85) 50%, rgba(75, 85, 99, 0.4) 100%);
-		}
-
-		.hero-modern__badge {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.5rem;
-			border-radius: 9999px;
-			padding: 0.75rem 1.25rem;
-			background: rgba(255, 255, 255, 0.1);
-			border: 1px solid rgba(255, 255, 255, 0.2);
-			color: rgba(255, 255, 255, 0.9);
-			font-size: 0.85rem;
-			font-weight: 600;
-			letter-spacing: 0.05em;
-			text-transform: uppercase;
-			backdrop-filter: blur(8px);
-			animation: fadeInUp 0.8s ease-out;
-		}
-
-		.hero-modern__cta-primary {
-			background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-			box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
-			animation: fadeInUp 1s ease-out 0.1s both;
-		}
-
-		.hero-modern__cta-primary:hover {
-			transform: translateY(-2px);
-			box-shadow: 0 15px 35px rgba(220, 38, 38, 0.4);
-		}
-
-		.hero-modern__cta-secondary {
-			background: rgba(255, 255, 255, 0.05);
-			animation: fadeInUp 1s ease-out 0.2s both;
-		}
-
-		.hero-modern__cta-secondary:hover {
-			background: rgba(255, 255, 255, 0.15);
-		}
-
-		@keyframes fadeInUp {
-			from {
-				opacity: 0;
-				transform: translateY(20px);
-			}
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-
-		@media (max-width: 768px) {
-			.hero-modern__background {
-				opacity: 0.2;
-			}
-		}
-
-		@media (prefers-reduced-motion: reduce) {
-			.hero-modern__badge,
-			.hero-modern__cta-primary,
-			.hero-modern__cta-secondary,
-			.animate-bounce {
-				animation: none;
-				transition: none;
-			}
-		}
-	</style>
-@endonce
-</div>
+	</div>
+</section>
