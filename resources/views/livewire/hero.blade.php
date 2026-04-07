@@ -15,6 +15,9 @@
 	$heroSubtitle = $hero->subtitle ?? 'Clinica CORI brinda atencion medica confiable con una experiencia digital clara, especialistas modernos y reserva adaptable.';
 	$primaryButtonText = $hero->button_text ?? 'Reservar cita';
 	$primaryButtonRoute = $hero->button_url ?? 'citas';
+	$ctaBaseClasses = 'inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold tracking-[0.01em] transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-blue sm:min-w-[190px]';
+	$ctaPrimaryClasses = 'bg-gradient-to-r from-white via-brand-mist to-white text-brand-blue shadow-[0_14px_34px_rgba(15,23,42,0.18)] ring-1 ring-white/70 hover:from-brand-mist hover:to-white hover:shadow-[0_18px_40px_rgba(15,23,42,0.24)] focus-visible:ring-white dark:from-brand-pink dark:via-brand-blue dark:to-brand-dark dark:text-white dark:ring-white/15 dark:shadow-[0_14px_34px_rgba(8,15,40,0.45)] dark:hover:from-brand-blue dark:hover:via-brand-pink dark:hover:to-brand-dark dark:hover:shadow-[0_18px_40px_rgba(8,15,40,0.55)] dark:focus-visible:ring-brand-mist dark:focus-visible:ring-offset-slate-950';
+	$ctaSecondaryClasses = 'border border-white/60 bg-white/88 text-brand-blue shadow-[0_10px_28px_rgba(15,23,42,0.12)] backdrop-blur hover:bg-white hover:shadow-[0_16px_36px_rgba(15,23,42,0.18)] focus-visible:ring-white dark:border-white/20 dark:bg-white/10 dark:text-white dark:shadow-none dark:hover:bg-white/15 dark:focus-visible:ring-brand-mist dark:focus-visible:ring-offset-slate-950';
 @endphp
 
 <section class="relative isolate overflow-hidden">
@@ -34,26 +37,26 @@
 			<p class="mt-6 max-w-2xl text-lg leading-8 text-white/82 md:text-xl">{{ $heroSubtitle }}</p>
 
 			<div class="mt-10 flex flex-col gap-4 sm:flex-row">
-				<a href="{{ route($primaryButtonRoute) }}" class="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-blue shadow-glow transition hover:-translate-y-0.5 hover:bg-brand-mist">
+				<a href="{{ route($primaryButtonRoute) }}" class="{{ $ctaBaseClasses }} {{ $ctaPrimaryClasses }}">
 					{{ $primaryButtonText }}
 				</a>
-				<a href="{{ url('/#servicios') }}" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/15">
+				<a href="{{ url('/#servicios') }}" class="{{ $ctaBaseClasses }} {{ $ctaSecondaryClasses }}">
 					Ver servicios
 				</a>
 			</div>
 
 			<div class="mt-12 grid gap-4 sm:grid-cols-3">
-				<div class="rounded-[1.5rem] border border-white/10 bg-white/10 p-4 backdrop-blur">
+				<div class="rounded-[1.5rem] border border-white/35 bg-white/88 p-4 text-brand-blue shadow-[0_12px_28px_rgba(15,23,42,0.14)] backdrop-blur dark:border-white/10 dark:bg-white/10 dark:text-white dark:shadow-none">
 					<p class="text-2xl font-bold">+6k</p>
-					<p class="mt-1 text-sm text-white/72">consultas atendidas</p>
+					<p class="mt-1 text-sm text-slate-600 dark:text-white/72">consultas atendidas</p>
 				</div>
-				<div class="rounded-[1.5rem] border border-white/10 bg-white/10 p-4 backdrop-blur">
+				<div class="rounded-[1.5rem] border border-white/35 bg-white/88 p-4 text-brand-blue shadow-[0_12px_28px_rgba(15,23,42,0.14)] backdrop-blur dark:border-white/10 dark:bg-white/10 dark:text-white dark:shadow-none">
 					<p class="text-2xl font-bold">12</p>
-					<p class="mt-1 text-sm text-white/72">especialistas activos</p>
+					<p class="mt-1 text-sm text-slate-600 dark:text-white/72">especialistas activos</p>
 				</div>
-				<div class="rounded-[1.5rem] border border-white/10 bg-white/10 p-4 backdrop-blur">
+				<div class="rounded-[1.5rem] border border-white/35 bg-white/88 p-4 text-brand-blue shadow-[0_12px_28px_rgba(15,23,42,0.14)] backdrop-blur dark:border-white/10 dark:bg-white/10 dark:text-white dark:shadow-none">
 					<p class="text-2xl font-bold">4.9/5</p>
-					<p class="mt-1 text-sm text-white/72">valoracion promedio</p>
+					<p class="mt-1 text-sm text-slate-600 dark:text-white/72">valoracion promedio</p>
 				</div>
 			</div>
 		</div>

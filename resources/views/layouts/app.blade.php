@@ -256,30 +256,26 @@
 			<div class="mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
 				{{-- Logo --}}
-				<a href="{{ route('home') }}" class="group flex items-center gap-3 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink focus-visible:ring-offset-2">
-					<img src="{{ asset('images/logo-cori.svg') }}" alt="Clinica CORI" class="h-9 w-auto transition-transform duration-300 group-hover:scale-105 sm:h-10">
-					<span class="hidden select-none flex-col leading-none sm:flex">
-						<span class="text-[10px] font-semibold tracking-[0.2em] text-brand-pink" style="font-family:'Poppins',sans-serif">CLÍNICA</span>
-						<span class="text-base font-bold tracking-widest text-brand-blue dark:text-slate-100" style="font-family:'Poppins',sans-serif">CORI</span>
-					</span>
+				<a href="{{ route('home') }}" class="group flex items-center rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink focus-visible:ring-offset-2">
+					<img src="{{ asset('images/logo-cori.svg') }}" alt="Clinica CORI" class="h-10 w-auto max-w-[150px] transition-transform duration-300 group-hover:scale-[1.02] sm:h-11 sm:max-w-[170px]">
 				</a>
 
 				{{-- Desktop navigation --}}
-				<nav class="hidden items-center gap-0.5 md:flex" aria-label="Navegación principal">
+				<nav class="hidden items-center gap-1 md:flex" aria-label="Navegación principal">
 					<a href="{{ route('home') }}#inicio"
-					   class="nav-link-pill relative rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink"
+					   class="nav-link-pill relative rounded-xl px-4 py-2.5 text-[15px] font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink"
 					   :class="activeSection==='inicio' ? 'text-brand-blue dark:text-white is-active' : 'text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-white'">Inicio</a>
 					<a href="{{ route('home') }}#servicios"
-					   class="nav-link-pill relative rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink"
+					   class="nav-link-pill relative rounded-xl px-4 py-2.5 text-[15px] font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink"
 					   :class="activeSection==='servicios' ? 'text-brand-blue dark:text-white is-active' : 'text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-white'">Servicios</a>
 					<a href="{{ route('home') }}#nosotros"
-					   class="nav-link-pill relative rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink"
+					   class="nav-link-pill relative rounded-xl px-4 py-2.5 text-[15px] font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink"
 					   :class="activeSection==='nosotros' ? 'text-brand-blue dark:text-white is-active' : 'text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-white'">Nosotros</a>
 					<a href="{{ route('home') }}#doctores"
-					   class="nav-link-pill relative rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink"
+					   class="nav-link-pill relative rounded-xl px-4 py-2.5 text-[15px] font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink"
 					   :class="activeSection==='doctores' ? 'text-brand-blue dark:text-white is-active' : 'text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-white'">Doctores</a>
 					<a href="{{ route('home') }}#contacto"
-					   class="nav-link-pill relative rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink"
+					   class="nav-link-pill relative rounded-xl px-4 py-2.5 text-[15px] font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink"
 					   :class="activeSection==='contacto' ? 'text-brand-blue dark:text-white is-active' : 'text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-white'">Contacto</a>
 				</nav>
 
@@ -304,7 +300,7 @@
 					{{-- CTA button (desktop) --}}
 					<a
 						href="{{ route('citas') }}"
-						class="hidden items-center gap-2 rounded-xl bg-gradient-to-r from-brand-blue to-brand-pink px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_18px_rgba(230,62,140,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_26px_rgba(230,62,140,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink focus-visible:ring-offset-2 md:inline-flex"
+						class="hidden items-center gap-2 rounded-xl bg-gradient-to-r from-brand-blue to-brand-pink px-5 py-2.5 text-[15px] font-semibold text-white shadow-[0_4px_18px_rgba(230,62,140,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_26px_rgba(230,62,140,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink focus-visible:ring-offset-2 md:inline-flex"
 					>
 						<svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
