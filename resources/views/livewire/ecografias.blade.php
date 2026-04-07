@@ -1,14 +1,25 @@
-<section class="bg-white p-8 rounded-lg shadow-lg mx-4 mb-8">
-    <h2 class="text-3xl font-bold text-primary-blue mb-6 text-center">Ecografías Especializadas</h2>
-    <p class="text-center text-text-dark mb-8">Equipo de ecografía de última generación para el control integral del embarazo.</p>
+<section>
+    <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-text-dark mb-3">Ecografías Especializadas</h2>
+        <p class="text-text-muted max-w-xl mx-auto">Equipamiento de última generación para el control integral del embarazo y diagnóstico prenatal.</p>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         @forelse($ecografias as $ecografia)
-            <div class="p-6 border border-light-pink rounded-lg bg-gradient-to-br from-white to-light-pink/10 hover:shadow-lg transition">
-                <h3 class="text-secondary-pink font-bold text-lg mb-2">{{ $ecografia->nombre }}</h3>
-                <p class="text-text-dark">{{ $ecografia->descripcion }}</p>
+            <div class="p-6 rounded-xl bg-white border border-slate-100 hover:shadow-md transition duration-200 hover:border-brand-purple">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-brand-light flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-brand-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-text-dark mb-1">{{ $ecografia->nombre }}</h3>
+                        <p class="text-text-muted text-sm leading-relaxed">{{ $ecografia->descripcion }}</p>
+                    </div>
+                </div>
             </div>
         @empty
-            <p class="text-center text-text-dark col-span-2">No hay ecografías cargadas.</p>
+            <p class="text-center text-text-muted col-span-2 py-8">No hay ecografías disponibles.</p>
         @endforelse
     </div>
 </section>
