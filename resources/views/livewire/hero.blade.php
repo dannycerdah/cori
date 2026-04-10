@@ -26,8 +26,8 @@
 	<div class="absolute right-[-5rem] top-20 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
 	<div class="absolute left-[-4rem] top-40 h-56 w-56 rounded-full bg-brand-pink/30 blur-3xl"></div>
 
-	<div class="relative mx-auto grid min-h-[84vh] w-full max-w-7xl gap-10 px-4 pb-24 pt-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-28 lg:pt-20">
-		<div class="flex flex-col justify-center text-white">
+	<div class="relative mx-auto grid min-h-[62vh] w-full max-w-7xl gap-8 px-4 pb-12 pt-4 sm:px-6 sm:pb-14 sm:pt-6 lg:min-h-[68vh] lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:px-8 lg:pb-16 lg:pt-6 xl:min-h-[72vh]">
+		<div class="flex flex-col justify-start text-white">
 			<div class="inline-flex w-fit items-center gap-3 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.28em] backdrop-blur">
 				<span class="h-2.5 w-2.5 rounded-full bg-brand-pink"></span>
 				Salud confiable
@@ -45,18 +45,21 @@
 				</a>
 			</div>
 
-			<div class="mt-12 grid gap-4 sm:grid-cols-3">
-				<div class="rounded-[1.5rem] border border-white/35 bg-white/88 p-4 text-brand-blue shadow-[0_12px_28px_rgba(15,23,42,0.14)] backdrop-blur dark:border-white/10 dark:bg-white/10 dark:text-white dark:shadow-none">
-					<p class="text-2xl font-bold">+6k</p>
-					<p class="mt-1 text-sm text-slate-600 dark:text-white/72">consultas atendidas</p>
+			<div class="mt-10 grid gap-4 sm:grid-cols-3">
+				<div class="rounded-2xl border border-brand-blue/25 border-l-4 border-l-brand-pink bg-gradient-to-b from-white to-brand-soft/70 p-5 shadow-[0_16px_34px_rgba(15,23,42,0.14)] backdrop-blur-md dark:border-white/20 dark:border-l-brand-pink dark:bg-gradient-to-b dark:from-slate-900/82 dark:to-slate-800/72 dark:shadow-[0_14px_30px_rgba(2,6,23,0.45)]">
+					<p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-700 dark:text-brand-mist">Actividad</p>
+					<p class="mt-2 text-3xl font-extrabold leading-none text-brand-blue dark:text-white">+6k</p>
+					<p class="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-200">consultas atendidas</p>
 				</div>
-				<div class="rounded-[1.5rem] border border-white/35 bg-white/88 p-4 text-brand-blue shadow-[0_12px_28px_rgba(15,23,42,0.14)] backdrop-blur dark:border-white/10 dark:bg-white/10 dark:text-white dark:shadow-none">
-					<p class="text-2xl font-bold">12</p>
-					<p class="mt-1 text-sm text-slate-600 dark:text-white/72">especialistas activos</p>
+				<div class="rounded-2xl border border-brand-blue/25 border-l-4 border-l-brand-blue bg-gradient-to-b from-white to-brand-soft/70 p-5 shadow-[0_16px_34px_rgba(15,23,42,0.14)] backdrop-blur-md dark:border-white/20 dark:border-l-brand-blue dark:bg-gradient-to-b dark:from-slate-900/82 dark:to-slate-800/72 dark:shadow-[0_14px_30px_rgba(2,6,23,0.45)]">
+					<p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-700 dark:text-brand-mist">Equipo</p>
+					<p class="mt-2 text-3xl font-extrabold leading-none text-brand-blue dark:text-white">12</p>
+					<p class="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-200">especialistas activos</p>
 				</div>
-				<div class="rounded-[1.5rem] border border-white/35 bg-white/88 p-4 text-brand-blue shadow-[0_12px_28px_rgba(15,23,42,0.14)] backdrop-blur dark:border-white/10 dark:bg-white/10 dark:text-white dark:shadow-none">
-					<p class="text-2xl font-bold">4.9/5</p>
-					<p class="mt-1 text-sm text-slate-600 dark:text-white/72">valoracion promedio</p>
+				<div class="rounded-2xl border border-brand-blue/25 border-l-4 border-l-emerald-500 bg-gradient-to-b from-white to-brand-soft/70 p-5 shadow-[0_16px_34px_rgba(15,23,42,0.14)] backdrop-blur-md dark:border-white/20 dark:border-l-emerald-400 dark:bg-gradient-to-b dark:from-slate-900/82 dark:to-slate-800/72 dark:shadow-[0_14px_30px_rgba(2,6,23,0.45)]">
+					<p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-700 dark:text-brand-mist">Calidad</p>
+					<p class="mt-2 text-3xl font-extrabold leading-none text-brand-blue dark:text-white">4.9/5</p>
+					<p class="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-200">valoracion promedio</p>
 				</div>
 			</div>
 		</div>
