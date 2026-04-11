@@ -72,8 +72,8 @@
 				</div>
 				<div class="absolute bottom-7 left-7 right-7 rounded-[1.5rem] border border-white/25 bg-brand-blue/75 p-5 text-white backdrop-blur-xl md:bottom-9 md:left-9 md:right-9">
 					<p class="text-sm font-semibold uppercase tracking-[0.24em] text-brand-mist">Clinica CORI</p>
-					<p class="mt-2 text-xl font-bold">Cuidado profesional, experiencia cercana e interfaz moderna.</p>
-					<p class="mt-2 text-sm leading-6 text-white/75">Paleta azul y rosa, animaciones suaves y acciones simples enfocadas en conversion.</p>
+					<p class="mt-1 text-xl font-bold text-white">Especialista en fertilidad</p>
+					<p class="mt-2 text-sm leading-6 text-white/85">Te acompañamos en cada paso hacia el sueño de formar una familia, con cuidado personalizado y apoyo profesional.</p>
 				</div>
 			</div>
 		</div>
