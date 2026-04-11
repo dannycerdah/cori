@@ -65,10 +65,10 @@
 		</div>
 
 		<div class="flex w-full self-start items-start justify-center lg:justify-end">
-			<div class="glass-panel relative w-full max-w-lg overflow-hidden rounded-[2rem] border border-white/20 p-4 shadow-glow md:p-5 dark:border-white/10">
+			<div class="glass-panel relative w-full max-w-xl overflow-hidden rounded-[2rem] border border-white/20 p-4 shadow-glow md:p-5 dark:border-white/10">
 				<div class="absolute inset-x-8 top-0 h-24 bg-gradient-to-b from-white/30 to-transparent"></div>
-				<div class="relative aspect-[4/5] w-full max-h-[34rem] overflow-hidden rounded-[1.6rem] sm:aspect-[5/6] lg:aspect-[4/5]">
-					<img src="{{ $heroImage }}" alt="Clinica CORI" class="h-full w-full object-cover object-[35%_center] md:object-[30%_center] shadow-card">
+				<div class="relative aspect-[5/4] w-full max-h-[30rem] overflow-hidden rounded-[1.6rem] bg-white/10 sm:aspect-[6/5] lg:aspect-[5/4]">
+					<img src="{{ $heroImage }}" alt="Clinica CORI" class="h-full w-full object-contain object-center shadow-card">
 				</div>
 				<div class="absolute bottom-7 left-7 right-7 rounded-[1.5rem] border border-white/25 bg-brand-blue/75 p-5 text-white backdrop-blur-xl md:bottom-9 md:left-9 md:right-9">
 					<p class="text-sm font-semibold uppercase tracking-[0.24em] text-brand-mist">Clinica CORI</p>
