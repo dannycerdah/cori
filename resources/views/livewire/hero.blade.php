@@ -46,20 +46,20 @@
 			</div>
 
 			<div class="mt-10 grid gap-4 sm:grid-cols-3">
-				<div class="rounded-2xl border border-brand-blue/25 border-l-8 border-l-brand-pink bg-gradient-to-b from-white to-brand-soft/70 p-5 shadow-[0_16px_34px_rgba(15,23,42,0.14)] backdrop-blur-md dark:border-white/20 dark:border-l-brand-pink dark:bg-gradient-to-b dark:from-slate-900/82 dark:to-slate-800/72 dark:shadow-[0_14px_30px_rgba(2,6,23,0.45)]">
-					<p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-700 dark:text-brand-mist">Actividad</p>
-					<p class="mt-2 text-3xl font-extrabold leading-none text-brand-blue dark:text-white">+6k</p>
-					<p class="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-200">consultas atendidas</p>
+				<div class="group rounded-2xl border border-brand-blue/20 border-l-8 border-l-brand-pink bg-gradient-to-b from-white to-brand-soft/70 p-5 shadow-[0_16px_34px_rgba(15,23,42,0.14)] backdrop-blur-md transition duration-300 hover:-translate-y-1 dark:border-white/10 dark:border-l-brand-pink dark:bg-gradient-to-br dark:from-slate-900 dark:to-slate-800/80 dark:shadow-[0_0_0_1px_rgba(230,62,140,0.18),0_16px_40px_rgba(2,6,23,0.6)] dark:hover:shadow-[0_0_0_1px_rgba(230,62,140,0.35),0_20px_48px_rgba(2,6,23,0.7)]">
+					<p class="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500 dark:text-brand-pink/80">Actividad</p>
+					<p class="mt-2 text-4xl font-extrabold leading-none text-brand-blue dark:text-white">+6k</p>
+					<p class="mt-2 text-xs font-medium text-slate-500 dark:text-slate-400">consultas atendidas</p>
 				</div>
-				<div class="rounded-2xl border border-brand-blue/25 border-l-8 border-l-brand-blue bg-gradient-to-b from-white to-brand-soft/70 p-5 shadow-[0_16px_34px_rgba(15,23,42,0.14)] backdrop-blur-md dark:border-white/20 dark:border-l-brand-blue dark:bg-gradient-to-b dark:from-slate-900/82 dark:to-slate-800/72 dark:shadow-[0_14px_30px_rgba(2,6,23,0.45)]">
-					<p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-700 dark:text-brand-mist">Equipo</p>
-					<p class="mt-2 text-3xl font-extrabold leading-none text-brand-blue dark:text-white">12</p>
-					<p class="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-200">especialistas activos</p>
+				<div class="group rounded-2xl border border-brand-blue/20 border-l-8 border-l-brand-blue bg-gradient-to-b from-white to-brand-soft/70 p-5 shadow-[0_16px_34px_rgba(15,23,42,0.14)] backdrop-blur-md transition duration-300 hover:-translate-y-1 dark:border-white/10 dark:border-l-brand-blue dark:bg-gradient-to-br dark:from-slate-900 dark:to-slate-800/80 dark:shadow-[0_0_0_1px_rgba(46,47,127,0.30),0_16px_40px_rgba(2,6,23,0.6)] dark:hover:shadow-[0_0_0_1px_rgba(46,47,127,0.55),0_20px_48px_rgba(2,6,23,0.7)]">
+					<p class="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500 dark:text-brand-mist/80">Equipo</p>
+					<p class="mt-2 text-4xl font-extrabold leading-none text-brand-blue dark:text-white">12</p>
+					<p class="mt-2 text-xs font-medium text-slate-500 dark:text-slate-400">especialistas activos</p>
 				</div>
-				<div class="rounded-2xl border border-brand-blue/25 border-l-8 border-l-emerald-500 bg-gradient-to-b from-white to-brand-soft/70 p-5 shadow-[0_16px_34px_rgba(15,23,42,0.14)] backdrop-blur-md dark:border-white/20 dark:border-l-emerald-400 dark:bg-gradient-to-b dark:from-slate-900/82 dark:to-slate-800/72 dark:shadow-[0_14px_30px_rgba(2,6,23,0.45)]">
-					<p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-700 dark:text-brand-mist">Calidad</p>
-					<p class="mt-2 text-3xl font-extrabold leading-none text-brand-blue dark:text-white">4.9/5</p>
-					<p class="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-200">valoracion promedio</p>
+				<div class="group rounded-2xl border border-brand-blue/20 border-l-8 border-l-emerald-500 bg-gradient-to-b from-white to-brand-soft/70 p-5 shadow-[0_16px_34px_rgba(15,23,42,0.14)] backdrop-blur-md transition duration-300 hover:-translate-y-1 dark:border-white/10 dark:border-l-emerald-400 dark:bg-gradient-to-br dark:from-slate-900 dark:to-slate-800/80 dark:shadow-[0_0_0_1px_rgba(52,211,153,0.18),0_16px_40px_rgba(2,6,23,0.6)] dark:hover:shadow-[0_0_0_1px_rgba(52,211,153,0.35),0_20px_48px_rgba(2,6,23,0.7)]">
+					<p class="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500 dark:text-emerald-400/80">Calidad</p>
+					<p class="mt-2 text-4xl font-extrabold leading-none text-brand-blue dark:text-white">4.9/5</p>
+					<p class="mt-2 text-xs font-medium text-slate-500 dark:text-slate-400">valoracion promedio</p>
 				</div>
 			</div>
 		</div>
