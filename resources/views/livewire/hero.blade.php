@@ -26,8 +26,8 @@
 	<div class="absolute right-[-5rem] top-20 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
 	<div class="absolute left-[-4rem] top-40 h-56 w-56 rounded-full bg-brand-pink/30 blur-3xl"></div>
 
-	<div class="relative mx-auto grid w-full max-w-7xl items-start gap-6 px-4 pb-12 pt-4 sm:px-6 sm:pb-14 sm:pt-6 lg:grid-cols-[minmax(0,0.98fr)_minmax(0,1.02fr)] lg:gap-8 lg:px-8 lg:pb-16 lg:pt-6">
-		<div class="flex flex-col justify-start text-white">
+	<div class="relative mx-auto flex w-full max-w-7xl flex-col items-start gap-6 px-4 pb-12 pt-4 sm:px-6 sm:pb-14 sm:pt-6 lg:flex-row lg:items-start lg:gap-8 lg:px-8 lg:pb-16 lg:pt-6">
+		<div class="flex w-full self-start flex-col justify-start pt-0 text-white lg:w-[49%]">
 			<div class="inline-flex w-fit items-center gap-3 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.28em] backdrop-blur">
 				<span class="h-2.5 w-2.5 rounded-full bg-brand-pink"></span>
 				Salud confiable
@@ -64,8 +64,8 @@
 			</div>
 		</div>
 
-		<div class="flex w-full self-start items-start justify-center lg:justify-end">
-			<div class="glass-panel relative w-full max-w-xl overflow-hidden rounded-[2rem] border border-white/20 p-4 shadow-glow md:p-5 dark:border-white/10">
+		<div class="mt-0 flex w-full self-start items-start justify-center pt-0 lg:w-[51%] lg:justify-end">
+			<div class="glass-panel relative mt-[73px] w-full max-w-xl overflow-hidden rounded-[2rem] border border-white/20 p-4 shadow-glow md:p-5 dark:border-white/10">
 				<div class="absolute inset-x-8 top-0 h-24 bg-gradient-to-b from-white/30 to-transparent"></div>
 				<div class="relative aspect-[5/4] w-full max-h-[30rem] overflow-hidden rounded-[1.6rem] bg-white/10 sm:aspect-[6/5] lg:aspect-[5/4]">
 					<img src="{{ $heroImage }}" alt="Clinica CORI" class="h-full w-full object-contain object-center shadow-card">
