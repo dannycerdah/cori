@@ -73,9 +73,8 @@
 				<div class="absolute bottom-7 left-7 right-7 rounded-[1.5rem] border border-brand-pink/30 bg-gradient-to-br from-brand-blue/85 via-brand-blue/75 to-brand-pink/60 p-5 text-white shadow-[0_8px_32px_rgba(230,62,140,0.28)] backdrop-blur-xl md:bottom-9 md:left-9 md:right-9">
 					<div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1">
 						<span class="h-1.5 w-1.5 rounded-full bg-brand-pink"></span>
-						<p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-mist">Clinica CORI</p>
+						<p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-mist">Especialista en fertilidad</p>
 					</div>
-					<p class="mt-3 text-xl font-extrabold leading-tight text-white">Especialista en fertilidad</p>
 					<div class="mt-3 h-px w-10 rounded-full bg-brand-pink/70"></div>
 					<p class="mt-3 text-sm leading-6 text-white/90">Te acompañamos en cada paso hacia el sueño de formar una familia, con cuidado personalizado y apoyo profesional.</p>
 				</div>
