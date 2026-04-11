@@ -56,7 +56,7 @@
 			<livewire:hero />
 		</section>
 
-		<section class="section-reveal mx-auto -mt-14 w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+		<section class="section-reveal mx-auto mt-8 w-full max-w-6xl px-4 sm:mt-10 sm:px-6 lg:px-8">
 			<div class="glass-panel grid gap-6 rounded-[2rem] border border-white/70 p-6 shadow-card dark:border-white/10 md:grid-cols-3 md:p-8">
 				@foreach ($clinicHighlights as $highlight)
 					<div class="rounded-[1.5rem] bg-white/75 p-6 text-center dark:bg-white/5">
