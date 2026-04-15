@@ -1,0 +1,20 @@
+<svg width="800" height="560" viewBox="0 0 800 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="100" y1="70" x2="706" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FB7185"/>
+      <stop offset="0.55" stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" rx="48" fill="#1F2937"/>
+  <rect x="40" y="40" width="720" height="480" rx="40" fill="url(#bg)"/>
+  <circle cx="628" cy="122" r="88" fill="white" fill-opacity="0.08"/>
+  <circle cx="172" cy="434" r="120" fill="white" fill-opacity="0.06"/>
+  <rect x="112" y="112" width="576" height="336" rx="32" fill="white" fill-opacity="0.11" stroke="white" stroke-opacity="0.16"/>
+  <path d="M326 341C326 275 367 184 424 176C449 173 471 186 482 206C492 224 490 244 478 262C470 275 470 291 477 304C488 324 481 352 451 371C423 389 392 388 366 373C340 359 326 338 326 341Z" fill="white" fill-opacity="0.2"/>
+  <path d="M388 154C389 138 402 126 418 126C436 126 449 140 449 158C449 175 438 187 422 194L412 198" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="390" cy="238" r="12" fill="#F8FAFC" fill-opacity="0.92"/>
+  <circle cx="431" cy="267" r="14" fill="#F8FAFC" fill-opacity="0.92"/>
+  <circle cx="410" cy="312" r="11" fill="#F8FAFC" fill-opacity="0.92"/>
+  <path d="M564 178L572 201L596 201L576 214L584 238L564 224L544 238L552 214L532 201L556 201L564 178Z" fill="white" fill-opacity="0.88"/>
+</svg>
