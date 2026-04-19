@@ -83,6 +83,17 @@
 	<style>
 		[x-cloak] { display: none !important; }
 
+		*, *::before, *::after {
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			width: 100%;
+			min-width: 0;
+			overflow-x: hidden;
+		}
+
 		html {
 			scroll-behavior: smooth;
 		}
@@ -93,6 +104,23 @@
 				radial-gradient(circle at top left, rgba(230, 62, 140, 0.08), transparent 28%),
 				radial-gradient(circle at top right, rgba(46, 47, 127, 0.1), transparent 22%),
 				#F8F9FC;
+		}
+
+		img,
+		picture,
+		svg,
+		video,
+		iframe {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		.glass-panel,
+		.cori-panel {
+			width: 100%;
+			max-width: 100%;
+			min-width: 0;
 		}
 
 		.dark body {

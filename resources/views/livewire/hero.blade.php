@@ -23,8 +23,8 @@
 <section class="relative isolate overflow-hidden">
 	<div class="absolute inset-0 bg-brand-light dark:bg-slate-950"></div>
 	<div class="absolute inset-0 bg-gradient-to-br from-brand-blue via-brand-blue/90 to-brand-pink"></div>
-	<div class="absolute right-[-5rem] top-20 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
-	<div class="absolute left-[-4rem] top-40 h-56 w-56 rounded-full bg-brand-pink/30 blur-3xl"></div>
+	<div class="hidden sm:block absolute sm:right-[-5rem] top-20 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+	<div class="hidden sm:block absolute sm:left-[-4rem] top-40 h-56 w-56 rounded-full bg-brand-pink/30 blur-3xl"></div>
 
 	<div class="relative mx-auto flex w-full max-w-7xl flex-col items-start gap-6 px-4 pb-12 pt-4 sm:px-6 sm:pb-14 sm:pt-6 lg:flex-row lg:items-start lg:gap-8 lg:px-8 lg:pb-16 lg:pt-6">
 		<div class="flex w-full self-start flex-col justify-start pt-0 text-white lg:w-[49%]">
@@ -65,12 +65,12 @@
 		</div>
 
 		<div class="mt-0 flex w-full self-start items-start justify-center pt-0 lg:w-[51%] lg:justify-end">
-			<div class="glass-panel relative mt-[73px] w-full max-w-xl overflow-hidden rounded-[2rem] border border-white/20 p-4 shadow-glow md:p-5 dark:border-white/10">
+			<div class="glass-panel relative mt-6 w-full max-w-xl overflow-hidden rounded-[2rem] border border-white/20 p-4 shadow-glow md:mt-[73px] md:p-5 dark:border-white/10">
 				<div class="absolute inset-x-8 top-0 h-24 bg-gradient-to-b from-white/30 to-transparent"></div>
 				<div class="relative aspect-[5/4] w-full max-h-[30rem] overflow-hidden rounded-[1.6rem] bg-white/10 sm:aspect-[6/5] lg:aspect-[5/4]">
 					<img src="{{ $heroImage }}" alt="Clinica CORI" class="h-full w-full object-contain object-center shadow-card">
 				</div>
-				<div class="absolute bottom-7 left-7 right-7 rounded-[1.5rem] border border-brand-pink/30 bg-gradient-to-br from-brand-blue/85 via-brand-blue/75 to-brand-pink/60 p-5 text-white shadow-[0_8px_32px_rgba(230,62,140,0.28)] backdrop-blur-xl md:bottom-9 md:left-9 md:right-9">
+				<div class="relative w-full rounded-[1.5rem] border border-brand-pink/30 bg-gradient-to-br from-brand-blue/85 via-brand-blue/75 to-brand-pink/60 p-5 text-white shadow-[0_8px_32px_rgba(230,62,140,0.28)] backdrop-blur-xl md:absolute md:bottom-9 md:left-9 md:right-9">
 					<div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1">
 						<span class="h-1.5 w-1.5 rounded-full bg-brand-pink"></span>
 						<p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-mist">Especialista en fertilidad</p>
