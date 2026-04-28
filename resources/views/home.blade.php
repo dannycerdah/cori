@@ -2,12 +2,6 @@
 
 @section('content')
 	@php
-		$clinicHighlights = [
-			['value' => '15+', 'label' => 'anos de experiencia'],
-			['value' => '24/7', 'label' => 'acompanamiento digital'],
-			['value' => '98%', 'label' => 'pacientes satisfechos'],
-		];
-
 		$doctorCards = [
 			[
 				'name' => 'Dra. Camila Rojas',
@@ -54,17 +48,6 @@
 	<div class="pb-16">
 		<section id="inicio">
 			<livewire:hero />
-		</section>
-
-		<section class="section-reveal mx-auto mt-8 w-full max-w-6xl px-4 sm:mt-10 sm:px-6 lg:px-8">
-			<div class="glass-panel grid gap-6 rounded-[2rem] border border-white/70 p-6 shadow-card dark:border-white/10 md:grid-cols-3 md:p-8">
-				@foreach ($clinicHighlights as $highlight)
-					<div class="rounded-[1.5rem] bg-white/75 p-6 text-center dark:bg-white/5">
-						<p class="text-3xl font-extrabold text-brand-blue dark:text-white">{{ $highlight['value'] }}</p>
-						<p class="mt-2 text-sm font-medium text-slate-600 dark:text-slate-300">{{ $highlight['label'] }}</p>
-					</div>
-				@endforeach
-			</div>
 		</section>
 
 		<section id="servicios" class="section-reveal mx-auto mt-24 w-full max-w-7xl px-4 sm:px-6 lg:px-8">

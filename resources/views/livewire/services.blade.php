@@ -8,17 +8,27 @@
 @endphp
 
 <section>
-	<div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+	<div class="grid gap-6 xl:grid-cols-3">
 		@forelse($services as $service)
-			<article class="rounded-[1.75rem] bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-glow dark:bg-slate-900">
-				<div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-soft text-brand-blue dark:bg-white/5 dark:text-brand-pink">
+			<article class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/10 p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-glow dark:border-white/10 dark:bg-slate-900/80">
+				<div class="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-brand-pink/20 via-transparent to-transparent"></div>
+				<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(236,72,153,0.16),_transparent_32%)]"></div>
+				<div class="relative z-10 flex h-14 w-14 items-center justify-center rounded-3xl bg-gradient-to-br from-brand-pink to-brand-blue text-white shadow-lg">
 					<svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">{!! $serviceIcons[$loop->index % count($serviceIcons)] !!}</svg>
 				</div>
-				<h3 class="mt-6 text-xl font-bold text-brand-blue dark:text-white">{{ $service->nombre }}</h3>
-				<p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{{ $service->descripcion }}</p>
+				<div class="relative z-10 mt-6">
+					<h3 class="text-2xl font-bold text-slate-950 dark:text-white">{{ $service->nombre }}</h3>
+					<p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">{{ $service->descripcion }}</p>
+				</div>
+				<div class="relative z-10 mt-8">
+					<a href="{{ url('/#servicios') }}" class="inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-brand-pink">
+						Más información
+						<span class="text-lg leading-none">→</span>
+					</a>
+				</div>
 			</article>
 		@empty
-			<p class="col-span-full rounded-[1.75rem] bg-white px-6 py-8 text-center text-sm text-slate-500 shadow-card dark:bg-slate-900 dark:text-slate-300">No hay servicios disponibles por el momento.</p>
+			<p class="col-span-full rounded-[2rem] bg-white px-6 py-8 text-center text-sm text-slate-500 shadow-card dark:bg-slate-900 dark:text-slate-300">No hay servicios disponibles por el momento.</p>
 		@endforelse
 	</div>
 </section>

@@ -15,9 +15,9 @@
 	$heroSubtitle = $hero->subtitle ?? 'Clinica CORI brinda atencion medica confiable con una experiencia digital clara, especialistas modernos y reserva adaptable.';
 	$primaryButtonText = $hero->button_text ?? 'Reservar cita';
 	$primaryButtonRoute = $hero->button_url ?? 'citas';
-	$ctaBaseClasses = 'inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold tracking-[0.01em] transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-blue sm:min-w-[190px]';
-	$ctaPrimaryClasses = 'bg-gradient-to-r from-white via-brand-mist to-white text-brand-blue shadow-[0_14px_34px_rgba(15,23,42,0.18)] ring-1 ring-white/70 hover:from-brand-mist hover:to-white hover:shadow-[0_18px_40px_rgba(15,23,42,0.24)] focus-visible:ring-white dark:from-brand-pink dark:via-brand-blue dark:to-brand-dark dark:text-white dark:ring-white/15 dark:shadow-[0_14px_34px_rgba(8,15,40,0.45)] dark:hover:from-brand-blue dark:hover:via-brand-pink dark:hover:to-brand-dark dark:hover:shadow-[0_18px_40px_rgba(8,15,40,0.55)] dark:focus-visible:ring-brand-mist dark:focus-visible:ring-offset-slate-950';
-	$ctaSecondaryClasses = $ctaPrimaryClasses;
+	$ctaBaseClasses = 'inline-flex items-center justify-center rounded-full transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-blue w-full sm:w-auto sm:min-w-[190px]';
+	$ctaPrimaryClasses = 'px-8 py-4 text-base font-semibold tracking-[0.01em] bg-gradient-to-r from-brand-blue to-brand-pink text-white shadow-[0_16px_40px_rgba(54,75,255,0.22)] hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(54,75,255,0.28)] focus-visible:ring-white';
+	$ctaSecondaryClasses = 'px-6 py-3 text-sm font-medium border border-white/25 bg-white/10 text-white/70 hover:border-white/40 hover:bg-white/15 focus-visible:ring-white';
 @endphp
 
 <section class="relative isolate overflow-hidden">
