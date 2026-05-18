@@ -18,7 +18,10 @@ class EcografiaSeeder extends Seeder
         ];
 
         foreach ($ecografias as $ecografia) {
-            Ecografia::create(array_merge($ecografia, ['active' => true]));
+            Ecografia::updateOrCreate(
+                ['nombre' => $ecografia['nombre']],
+                array_merge($ecografia, ['active' => true])
+            );
         }
     }
 }

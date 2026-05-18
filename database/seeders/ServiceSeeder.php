@@ -20,7 +20,10 @@ class ServiceSeeder extends Seeder
         ];
 
         foreach ($services as $service) {
-            Service::create(array_merge($service, ['active' => true]));
+            Service::updateOrCreate(
+                ['nombre' => $service['nombre']],
+                array_merge($service, ['active' => true])
+            );
         }
     }
 }

@@ -24,10 +24,37 @@ class HomeController extends Controller
         return view('citas');
     }
 
+    public function buscarPaciente(Request $request)
+    {
+        $data = $request->validate([
+            'tipo_documento' => 'required|in:DNI,CE',
+            'numero_documento' => 'required|string|min:8|max:10',
+        ]);
+
+        $paciente = Paciente::where('tipo_documento', $data['tipo_documento'])
+            ->where('numero_documento', $data['numero_documento'])
+            ->first();
+
+        if (! $paciente) {
+            return response()->json(['found' => false]);
+        }
+
+        return response()->json([
+            'found' => true,
+            'paciente' => [
+                'nombre' => $paciente->nombre,
+                'email' => $paciente->email,
+                'telefono' => $paciente->telefono,
+            ],
+        ]);
+    }
+
     public function storeCita(Request $request)
     {
         $data = $request->validate([
             'paciente_nombre' => 'required|string|max:255',
+            'tipo_documento' => 'required|in:DNI,CE',
+            'numero_documento' => 'required|string|min:8|max:10',
             'telefono' => 'required|string|max:30',
             'email' => 'nullable|email|max:255',
             'especialidad_id' => 'required|exists:especialidades,id',
@@ -36,6 +63,11 @@ class HomeController extends Controller
             'notas' => 'nullable|string|max:1000',
         ], [
             'paciente_nombre.required' => 'El nombre del paciente es obligatorio.',
+            'tipo_documento.required' => 'Selecciona el tipo de documento.',
+            'tipo_documento.in' => 'Tipo de documento inválido.',
+            'numero_documento.required' => 'El número de documento es obligatorio.',
+            'numero_documento.min' => 'El número de documento debe tener al menos 8 caracteres.',
+            'numero_documento.max' => 'El número de documento no puede tener más de 10 caracteres.',
             'telefono.required' => 'El telefono es obligatorio.',
             'especialidad_id.required' => 'Selecciona una especialidad.',
             'especialidad_id.exists' => 'La especialidad seleccionada no es valida.',
@@ -47,13 +79,18 @@ class HomeController extends Controller
         ]);
 
         DB::transaction(function () use ($data): void {
-            $paciente = Paciente::firstOrCreate(
-                ['telefono' => (string) $data['telefono']],
-                [
-                    'nombre' => (string) $data['paciente_nombre'],
-                    'email' => $data['email'] ?? null,
-                ]
-            );
+            $paciente = Paciente::firstOrNew([
+                'tipo_documento' => $data['tipo_documento'],
+                'numero_documento' => $data['numero_documento'],
+            ]);
+
+            $paciente->fill([
+                'nombre' => (string) $data['paciente_nombre'],
+                'telefono' => (string) $data['telefono'],
+                'email' => $data['email'] ?? null,
+            ]);
+
+            $paciente->save();
 
             Cita::create([
                 'paciente_id' => $paciente->id,

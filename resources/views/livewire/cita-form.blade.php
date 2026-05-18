@@ -48,7 +48,44 @@
 
 	<form wire:submit.prevent="reservar" method="POST" action="{{ route('citas.store') }}" class="space-y-5" x-on:submit="sessionStorage.setItem('cori-scroll-restore', JSON.stringify({ y: window.scrollY, path: window.location.pathname }))">
 		@csrf
-		<div class="grid gap-5 md:grid-cols-2">
+		<div class="grid gap-5 grid-cols-1 md:grid-cols-2">
+
+			
+
+			{{-- Tipo de Documento --}}
+			<div>
+				<label class="cori-label" for="tipo_documento">
+					<svg class="h-3.5 w-3.5 shrink-0 text-brand-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" /></svg>
+					Tipo de documento
+				</label>
+				<div class="relative">
+					<select id="tipo_documento" name="tipo_documento" wire:model="tipo_documento" wire:change="buscarPaciente" class="cori-input pr-10">
+						<option value="">Selecciona tipo</option>
+						<option value="DNI">DNI</option>
+						<option value="CE">Carnet de Extranjería</option>
+					</select>
+					<span class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-slate-400 dark:text-slate-500" aria-hidden="true">
+						<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+					</span>
+				</div>
+				@error('tipo_documento') <span class="cori-error">{{ $message }}</span> @enderror
+			</div>
+
+			{{-- Número de Documento --}}
+			<div>
+				<label class="cori-label" for="numero_documento">
+					<svg class="h-3.5 w-3.5 shrink-0 text-brand-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" /></svg>
+					Número de documento
+				</label>
+				<input id="numero_documento" name="numero_documento" type="text" wire:model="numero_documento" wire:blur="buscarPaciente" wire:change="buscarPaciente" wire:keydown.enter.prevent="buscarPaciente" class="cori-input" placeholder="Ingresa tu número de documento" autocomplete="off">
+				@if($pacienteEncontrado)
+					<p class="mt-1 text-xs text-emerald-600 dark:text-emerald-400">
+						<svg class="inline h-3 w-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+						Paciente encontrado - se actualizarán los datos
+					</p>
+				@endif
+				@error('numero_documento') <span class="cori-error">{{ $message }}</span> @enderror
+			</div>
 
 			{{-- Nombre --}}
 			<div>
@@ -58,16 +95,6 @@
 				</label>
 				<input id="paciente_nombre" name="paciente_nombre" type="text" wire:model="paciente_nombre" class="cori-input" placeholder="Escribe tu nombre completo" autocomplete="name">
 				@error('paciente_nombre') <span class="cori-error">{{ $message }}</span> @enderror
-			</div>
-
-			{{-- Teléfono --}}
-			<div>
-				<label class="cori-label" for="telefono">
-					<svg class="h-3.5 w-3.5 shrink-0 text-brand-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
-					Teléfono
-				</label>
-				<input id="telefono" name="telefono" type="tel" wire:model="telefono" class="cori-input" placeholder="Ej. +56 9 1234 5678" autocomplete="tel">
-				@error('telefono') <span class="cori-error">{{ $message }}</span> @enderror
 			</div>
 
 			{{-- Email --}}
@@ -80,6 +107,16 @@
 				@error('email') <span class="cori-error">{{ $message }}</span> @enderror
 			</div>
 
+			{{-- Teléfono --}}
+			<div>
+				<label class="cori-label" for="telefono">
+					<svg class="h-3.5 w-3.5 shrink-0 text-brand-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+					Teléfono
+				</label>
+				<input id="telefono" name="telefono" type="tel" wire:model="telefono" class="cori-input" placeholder="Ej. +56 9 1234 5678" autocomplete="tel">
+				@error('telefono') <span class="cori-error">{{ $message }}</span> @enderror
+			</div>
+	
 			{{-- Especialidad --}}
 			<div>
 				<label class="cori-label" for="especialidad_id">
@@ -134,7 +171,10 @@
 		</div>
 
 		{{-- Footer row --}}
-		<div class="flex flex-col-reverse gap-4 border-t border-slate-100 pt-5 dark:border-slate-800 sm:flex-row sm:items-center sm:justify-between">
+		<div id="paciente-busqueda-result" class="hidden mt-2 rounded-xl bg-emerald-50 px-4 py-3 text-sm text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
+		Paciente encontrado automáticamente.
+	</div>
+	<div class="flex flex-col-reverse gap-4 border-t border-slate-100 pt-5 dark:border-slate-800 sm:flex-row sm:items-center sm:justify-between">
 			<p class="flex items-center gap-1.5 text-xs text-slate-400 dark:text-slate-500">
 				<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" /></svg>
 				Tus datos están protegidos y son confidenciales
@@ -148,4 +188,115 @@
 			</button>
 		</div>
 	</form>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const endpoint = '{{ route('pacientes.buscar') }}';
+			const tipoInput = document.getElementById('tipo_documento');
+			const numeroInput = document.getElementById('numero_documento');
+			const nombreInput = document.getElementById('paciente_nombre');
+			const emailInput = document.getElementById('email');
+			const telefonoInput = document.getElementById('telefono');
+			const resultMessage = document.getElementById('paciente-busqueda-result');
+
+			if (!tipoInput || !numeroInput || !nombreInput || !emailInput || !telefonoInput) {
+				return;
+			}
+
+			function dispatchInput(element) {
+				if (!element) return;
+				element.dispatchEvent(new Event('input', { bubbles: true }));
+			}
+
+			function showResult(found) {
+				if (!resultMessage) return;
+				resultMessage.classList.toggle('hidden', !found);
+			}
+
+			function debounce(fn, delay = 300) {
+				let timer;
+				return function (...args) {
+					clearTimeout(timer);
+					timer = setTimeout(() => fn.apply(this, args), delay);
+				};
+			}
+
+			async function buscarPacienteJS() {
+				const tipo = tipoInput.value.trim();
+				const numero = numeroInput.value.trim();
+
+				if (!tipo || !numero || numero.length < 8 || numero.length > 10) {
+					nombreInput.value = '';
+					emailInput.value = '';
+					telefonoInput.value = '';
+					dispatchInput(nombreInput);
+					dispatchInput(emailInput);
+					dispatchInput(telefonoInput);
+					showResult(false);
+					return;
+				}
+
+				try {
+					const url = `${endpoint}?tipo_documento=${encodeURIComponent(tipo)}&numero_documento=${encodeURIComponent(numero)}`;
+					const response = await fetch(url, {
+						headers: {
+							'X-Requested-With': 'XMLHttpRequest',
+							'Accept': 'application/json',
+						},
+					});
+
+					if (!response.ok) {
+						showResult(false);
+						nombreInput.value = '';
+						emailInput.value = '';
+						telefonoInput.value = '';
+						dispatchInput(nombreInput);
+						dispatchInput(emailInput);
+						dispatchInput(telefonoInput);
+						return;
+					}
+
+					const data = await response.json();
+					if (data.found && data.paciente) {
+						nombreInput.value = data.paciente.nombre || '';
+						emailInput.value = data.paciente.email || '';
+						telefonoInput.value = data.paciente.telefono || '';
+						dispatchInput(nombreInput);
+						dispatchInput(emailInput);
+						dispatchInput(telefonoInput);
+						showResult(true);
+					} else {
+						nombreInput.value = '';
+						emailInput.value = '';
+						telefonoInput.value = '';
+						dispatchInput(nombreInput);
+						dispatchInput(emailInput);
+						dispatchInput(telefonoInput);
+						showResult(false);
+					}
+				} catch (error) {
+					console.error('Error buscando paciente:', error);
+					nombreInput.value = '';
+					emailInput.value = '';
+					telefonoInput.value = '';
+					dispatchInput(nombreInput);
+					dispatchInput(emailInput);
+					dispatchInput(telefonoInput);
+					showResult(false);
+				}
+			}
+
+			const debouncedBuscar = debounce(buscarPacienteJS, 300);
+			tipoInput.addEventListener('change', buscarPacienteJS);
+			numeroInput.addEventListener('blur', buscarPacienteJS);
+			numeroInput.addEventListener('change', buscarPacienteJS);
+			numeroInput.addEventListener('keydown', function (event) {
+				if (event.key === 'Enter') {
+					event.preventDefault();
+					buscarPacienteJS();
+				}
+			});
+			numeroInput.addEventListener('input', debouncedBuscar);
+		});
+	</script>
 </div>

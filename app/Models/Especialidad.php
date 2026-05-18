@@ -15,6 +15,7 @@ class Especialidad extends Model
     protected $fillable = [
         'nombre',
         'descripcion',
+        'activo',
     ];
 
     public function citas()

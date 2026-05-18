@@ -18,7 +18,10 @@ class SurgerySeeder extends Seeder
         ];
 
         foreach ($surgeries as $surgery) {
-            Surgery::create(array_merge($surgery, ['active' => true]));
+            Surgery::updateOrCreate(
+                ['nombre' => $surgery['nombre']],
+                array_merge($surgery, ['active' => true])
+            );
         }
     }
 }
