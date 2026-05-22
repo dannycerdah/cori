@@ -36,16 +36,7 @@
 					alt="Especialidades médicas"
 				/>
 
-				<div class="absolute inset-0 bg-gradient-to-tr from-brand-pink/20 via-transparent to-white/10"></div>
-
-				<!-- Overlay con icono -->
-				<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-					<div class="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg">
-						<svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-						</svg>
-					</div>
-				</div>
+				<div class="absolute inset-0 bg-gradient-to-tr from-brand-pink/20 via-transparent to-white/10"></div>				 
 			</div>
 		</div>
 

@@ -296,7 +296,7 @@
 					<a href="{{ route('home') }}#servicios"
 					   class="nav-link-pill relative rounded-xl px-4 py-2.5 text-[15px] font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink"
 					   :class="activeSection==='servicios' ? 'text-brand-blue dark:text-white is-active' : 'text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-white'">Servicios</a>
-					<a href="{{ route('home') }}#nosotros"
+					<a href="{{ route('nosotros') }}"
 					   class="nav-link-pill relative rounded-xl px-4 py-2.5 text-[15px] font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink"
 					   :class="activeSection==='nosotros' ? 'text-brand-blue dark:text-white is-active' : 'text-slate-500 hover:text-brand-blue dark:text-slate-400 dark:hover:text-white'">Nosotros</a>
 					<a href="{{ route('home') }}#doctores"
@@ -372,7 +372,7 @@
 					<a href="{{ route('home') }}#servicios" @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-brand-soft hover:text-brand-blue dark:text-slate-200 dark:hover:bg-white/5 dark:hover:text-white">
 						<span class="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-pink"></span>Servicios
 					</a>
-					<a href="{{ route('home') }}#nosotros"  @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-brand-soft hover:text-brand-blue dark:text-slate-200 dark:hover:bg-white/5 dark:hover:text-white">
+					<a href="{{ route('nosotros') }}"  @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-brand-soft hover:text-brand-blue dark:text-slate-200 dark:hover:bg-white/5 dark:hover:text-white">
 						<span class="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-pink"></span>Nosotros
 					</a>
 					<a href="{{ route('home') }}#doctores"  @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-brand-soft hover:text-brand-blue dark:text-slate-200 dark:hover:bg-white/5 dark:hover:text-white">

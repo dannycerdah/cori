@@ -43,8 +43,6 @@
 			</div>
 		</section>
 
-		@include('components.nosotros')
-
 		<!-- @include('components.doctores') -->
 
 		@include('components.citas')

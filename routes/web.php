@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\CitaController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/nosotros', [HomeController::class, 'nosotros'])->name('nosotros');
 Route::get('/contacto', [HomeController::class, 'contacto'])->name('contacto');
 Route::get('/citas', [HomeController::class, 'citas'])->name('citas');
 Route::get('/pacientes/buscar', [HomeController::class, 'buscarPaciente'])->name('pacientes.buscar');
