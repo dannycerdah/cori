@@ -163,7 +163,7 @@ class CitaForm extends Component
 
     public function render()
     {
-        return view('livewire.cita-form', [
+        return view('components.citas', [
             'especialidades' => Especialidad::orderBy('nombre')->get(),
         ]);
     }

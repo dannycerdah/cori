@@ -45,7 +45,7 @@
 
 		<!-- @include('components.doctores') -->
 
-		@include('components.citas')
+		@livewire(\App\Http\Livewire\CitaForm::class)
 
 		<!-- @include('components.testimonios') -->
 
