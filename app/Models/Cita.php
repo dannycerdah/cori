@@ -4,8 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Paciente;
-use App\Models\Especialidad;
 
 class Cita extends Model
 {
@@ -16,10 +14,19 @@ class Cita extends Model
     protected $fillable = [
         'paciente_id',
         'especialidad_id',
+        'servicio_id',
+        'doctor_id',
+        'horario_id',
         'fecha',
-        'hora',
+        'hora_inicio',
+        'hora_fin',
+        'tipo',
         'estado',
-        'notas',
+        'observacion',
+    ];
+
+    protected $casts = [
+        'fecha' => 'date',
     ];
 
     public function paciente()
@@ -30,5 +37,20 @@ class Cita extends Model
     public function especialidad()
     {
         return $this->belongsTo(Especialidad::class);
+    }
+
+    public function servicio()
+    {
+        return $this->belongsTo(Servicio::class);
+    }
+
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class);
+    }
+
+    public function horario()
+    {
+        return $this->belongsTo(Horario::class);
     }
 }

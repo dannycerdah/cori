@@ -11,20 +11,20 @@ class CitaController extends Controller
 {
     public function index()
     {
-        $citas = Cita::with('paciente', 'especialidad')->orderBy('fecha')->orderBy('hora')->get();
-        return view('admin.citas.index', compact('citas'));
+        return view('admin.citas.index');
     }
 
     public function pacientes()
     {
-        $pacientes = Paciente::orderBy('nombre')->get();
+        $pacientes = Paciente::orderBy('apellidos')->orderBy('nombres')->paginate(20);
+
         return view('admin.pacientes.index', compact('pacientes'));
     }
 
     public function changeStatus(Request $request, Cita $cita)
     {
         $data = $request->validate([
-            'estado' => 'required|in:pendiente,atendido,cancelado',
+            'estado' => 'required|in:REGISTRADA,CONFIRMADA,ATENDIDA,CANCELADA,NO_ASISTIO',
         ]);
 
         $cita->update($data);

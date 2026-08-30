@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('title', 'Clínica CORI — Atención médica moderna y confiable')
+@section('description', 'Reserva tu cita médica en línea en Clínica CORI: especialidades, ecografías y cirugías con atención cálida, profesional y protocolos de bioseguridad actualizados.')
+
 @section('content')
 
 	<div class="pb-16">
@@ -14,7 +17,7 @@
 							
 				<p class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-brand-pink bg-brand-pink/10 rounded-full">
 					<span class="w-2 h-2 bg-brand-pink rounded-full"></span>
-					Servicios medicos
+					Servicios médicos
 				</p>
 
 			<h2 class="mt-2 text-balance text-3xl font-extrabold text-brand-blue dark:text-white md:text-5xl">
@@ -35,7 +38,7 @@
 			</div>
 
 
-			<div class="mt-14 space-y-16">
+			<div class="mt-14">
 				<livewire:services />
 				<livewire:ecografias />
 				<livewire:surgeries />
@@ -45,7 +48,9 @@
 
 		<!-- @include('components.doctores') -->
 
-		@livewire(\App\Http\Livewire\CitaForm::class)
+		<div class="section-reveal">
+			@livewire(\App\Livewire\CitaForm::class)
+		</div>
 
 		<!-- @include('components.testimonios') -->
 

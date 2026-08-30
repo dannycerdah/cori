@@ -1,1 +1,0 @@
-<?php require "vendor/autoload.php"; $app = require "bootstrap/app.php"; $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class); $kernel->bootstrap(); $p = \App\Models\Paciente::where("numero_documento","41878239")->first(); var_dump($p ? $p->toArray() : null);

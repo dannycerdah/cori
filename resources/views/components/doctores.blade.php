@@ -2,22 +2,22 @@
 	$doctorCards = [
 		[
 			'name' => 'Dra. Camila Rojas',
-			'specialty' => 'Cardiologia clinica',
+			'specialty' => 'Cardiología clínica',
 			'description' => 'Seguimiento preventivo y manejo integral para pacientes con factores de riesgo cardiovascular.',
 			'gradient' => 'from-brand-blue to-sky-400',
 			'initials' => 'CR',
 		],
 		[
 			'name' => 'Dr. Mateo Castillo',
-			'specialty' => 'Pediatria',
-			'description' => 'Controles de crecimiento, vacunacion y acompanamiento cercano durante las primeras etapas.',
+			'specialty' => 'Pediatría',
+			'description' => 'Controles de crecimiento, vacunación y acompañamiento cercano durante las primeras etapas.',
 			'gradient' => 'from-brand-pink to-rose-300',
 			'initials' => 'MC',
 		],
 		[
 			'name' => 'Dra. Sofia Mendoza',
-			'specialty' => 'Diagnostico y laboratorio',
-			'description' => 'Procesos diagnosticos rapidos y precisos para acelerar decisiones medicas informadas.',
+			'specialty' => 'Diagnóstico y laboratorio',
+			'description' => 'Procesos diagnósticos rápidos y precisos para acelerar decisiones médicas informadas.',
 			'gradient' => 'from-indigo-500 to-brand-blue',
 			'initials' => 'SM',
 		],
@@ -26,8 +26,8 @@
 
 <section id="doctores" class="section-reveal mx-auto mt-24 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 	<div class="mx-auto max-w-3xl text-center">
-		<p class="text-sm font-semibold uppercase tracking-[0.32em] text-brand-pink">Equipo medico</p>
-		<h2 class="mt-4 text-3xl font-extrabold text-brand-blue dark:text-white md:text-5xl">Doctores que combinan experiencia, tecnologia y acompanamiento humano</h2>
+		<p class="text-sm font-semibold uppercase tracking-[0.32em] text-brand-pink">Equipo médico</p>
+		<h2 class="mt-4 text-3xl font-extrabold text-brand-blue dark:text-white md:text-5xl">Doctores que combinan experiencia, tecnología y acompañamiento humano</h2>
 	</div>
 
 	<div class="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">

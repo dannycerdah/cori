@@ -1,17 +1,17 @@
 @php
 	$testimonials = [
 		[
-			'quote' => 'La experiencia fue impecable. El equipo nos explico cada paso con claridad y nos sentimos acompanados en todo momento.',
+			'quote' => 'La experiencia fue impecable. El equipo nos explicó cada paso con claridad y nos sentimos acompañados en todo momento.',
 			'author' => 'Valeria P.',
 			'role' => 'Paciente de medicina preventiva',
 		],
 		[
-			'quote' => 'Reservar la cita fue rapido y la atencion del personal medico transmitio mucha seguridad y profesionalismo.',
+			'quote' => 'Reservar la cita fue rápido y la atención del personal médico transmitió mucha seguridad y profesionalismo.',
 			'author' => 'Jorge M.',
-			'role' => 'Paciente de cardiologia',
+			'role' => 'Paciente de cardiología',
 		],
 		[
-			'quote' => 'Clinica CORI combina tecnologia con trato humano. La comunicacion posterior a la consulta tambien fue excelente.',
+			'quote' => 'Clínica CORI combina tecnología con trato humano. La comunicación posterior a la consulta también fue excelente.',
 			'author' => 'Carolina S.',
 			'role' => 'Paciente de laboratorio clinico',
 		],
@@ -21,7 +21,7 @@
 <section class="section-reveal mx-auto mt-24 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 	<div class="mx-auto max-w-3xl text-center">
 		<p class="text-sm font-semibold uppercase tracking-[0.32em] text-brand-pink">Testimonios</p>
-		<h2 class="mt-4 text-3xl font-extrabold text-brand-blue dark:text-white md:text-5xl">Confianza construida con atencion clara y resultados consistentes</h2>
+		<h2 class="mt-4 text-3xl font-extrabold text-brand-blue dark:text-white md:text-5xl">Confianza construida con atención clara y resultados consistentes</h2>
 	</div>
 
 	<div class="mt-14 grid gap-6 lg:grid-cols-3">

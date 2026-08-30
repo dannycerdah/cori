@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('pacientes', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('telefono')->unique();
-            $table->string('email')->nullable();
+            $table->string('tipo_documento', 20)->nullable();
+            $table->string('numero_documento', 30)->unique();
+            $table->string('nombres', 150);
+            $table->string('apellidos', 150);
+            $table->string('telefono', 30)->nullable();
+            $table->string('correo', 150)->nullable();
             $table->date('fecha_nacimiento')->nullable();
+            $table->boolean('estado')->default(true);
             $table->timestamps();
         });
     }

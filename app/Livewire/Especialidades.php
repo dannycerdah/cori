@@ -14,7 +14,7 @@ class Especialidades extends Component
             ? asset('images/specialties/cardiologia.png')
             : asset('images/specialties/cardiologia.svg');
 
-        $especialidades = Especialidad::where('activo', 1)->get()->map(function (Especialidad $especialidad) use ($cardioImage) {
+        $especialidades = Especialidad::where('estado', true)->get()->map(function (Especialidad $especialidad) use ($cardioImage) {
             $normalizedName = Str::of($especialidad->nombre)->ascii()->lower()->value();
 
             $especialidad->card_image = match (true) {

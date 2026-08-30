@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Database\Seeders\EspecialidadesSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,9 +19,17 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
+            AdminUserSeeder::class,
             EspecialidadesSeeder::class,
+            ServicioSeeder::class,
+            DoctorSeeder::class,
+            HorarioSeeder::class,
             ServiceSeeder::class,
             SurgerySeeder::class,
+            EcografiaSeeder::class,
+            HeroSeeder::class,
+            ContentSectionSeeder::class,
+            ContactInfoSeeder::class,
         ]);
     }
 }

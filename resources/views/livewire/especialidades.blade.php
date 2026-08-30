@@ -63,7 +63,7 @@
 							{{ $especialidad->nombre }}
 						</h4>
 						<p class="mt-1 sm:mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-							{{ $especialidad->descripcion ?? 'Atencion especializada y seguimiento cercano para cada necesidad clinica.' }}
+							{{ $especialidad->descripcion ?? 'Atención especializada y seguimiento cercano para cada necesidad clínica.' }}
 						</p>
 					</div>
 

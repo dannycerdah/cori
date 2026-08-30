@@ -11,13 +11,13 @@
 		$heroImage = $rawHeroImage;
 	}
 
-	$heroTitle = $hero->title ?? 'Atencion moderna con la calidez y confianza que cada paciente espera';
-	$heroSubtitle = $hero->subtitle ?? 'Clinica CORI brinda atencion medica confiable con una experiencia digital clara, especialistas modernos y reserva adaptable.';
+	$heroTitle = $hero->title ?? 'Atención moderna con la calidez y confianza que cada paciente espera';
+	$heroSubtitle = $hero->subtitle ?? 'Clínica CORI brinda atención médica confiable con una experiencia digital clara, especialistas modernos y reserva adaptable.';
 	$primaryButtonText = $hero->button_text ?? 'Reservar cita';
 	$primaryButtonRoute = $hero->button_url ?? 'citas';
 	$ctaBaseClasses = 'inline-flex items-center justify-center rounded-full transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-blue w-full sm:w-auto sm:min-w-[190px]';
 	$ctaPrimaryClasses = 'px-8 py-4 text-base font-semibold tracking-[0.01em] bg-gradient-to-r from-brand-blue to-brand-pink text-white shadow-[0_16px_40px_rgba(54,75,255,0.22)] hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(54,75,255,0.28)] focus-visible:ring-white';
-	$ctaSecondaryClasses = 'px-6 py-3 text-sm font-medium border border-white/25 bg-white/10 text-white/70 hover:border-white/40 hover:bg-white/15 focus-visible:ring-white';
+	$ctaSecondaryClasses = 'px-6 py-3 text-sm font-medium border border-white/40 bg-white/10 text-white hover:border-white/60 hover:bg-white/20 focus-visible:ring-white';
 @endphp
 
 <section class="relative isolate overflow-hidden">
@@ -59,7 +59,7 @@
 				<div class="group rounded-2xl border border-brand-blue/20 border-l-8 border-l-emerald-500 bg-gradient-to-b from-white to-brand-soft/70 p-5 shadow-[0_16px_34px_rgba(15,23,42,0.14)] backdrop-blur-md transition duration-300 hover:-translate-y-1 dark:border-white/10 dark:border-l-emerald-400 dark:bg-gradient-to-br dark:from-slate-900 dark:to-slate-800/80 dark:shadow-[0_0_0_1px_rgba(52,211,153,0.18),0_16px_40px_rgba(2,6,23,0.6)] dark:hover:shadow-[0_0_0_1px_rgba(52,211,153,0.35),0_20px_48px_rgba(2,6,23,0.7)]">
 					<p class="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500 dark:text-emerald-400/80">Calidad</p>
 					<p class="mt-2 text-4xl font-extrabold leading-none text-brand-blue dark:text-white">4.9/5</p>
-					<p class="mt-2 text-xs font-medium text-slate-500 dark:text-slate-400">valoracion promedio</p>
+					<p class="mt-2 text-xs font-medium text-slate-500 dark:text-slate-400">valoración promedio</p>
 				</div>
 			</div>
 		</div>
@@ -68,7 +68,7 @@
 			<div class="glass-panel relative mt-6 w-full max-w-xl overflow-hidden rounded-[2rem] border border-white/20 p-4 shadow-glow md:mt-[73px] md:p-5 dark:border-white/10">
 				<div class="absolute inset-x-8 top-0 h-24 bg-gradient-to-b from-white/30 to-transparent"></div>
 				<div class="relative aspect-[5/4] w-full max-h-[30rem] overflow-hidden rounded-[1.6rem] bg-white/10 sm:aspect-[6/5] lg:aspect-[5/4]">
-					<img src="{{ $heroImage }}" alt="Clinica CORI" class="h-full w-full object-contain object-center shadow-card">
+					<img src="{{ $heroImage }}" alt="Clínica CORI" class="h-full w-full object-contain object-center shadow-card">
 				</div>
 				<div class="relative w-full rounded-[1.5rem] border border-brand-pink/30 bg-gradient-to-br from-brand-blue/85 via-brand-blue/75 to-brand-pink/60 p-5 text-white shadow-[0_8px_32px_rgba(230,62,140,0.28)] backdrop-blur-xl md:absolute md:bottom-9 md:left-9 md:right-9">
 					<div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1">

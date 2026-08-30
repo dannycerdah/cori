@@ -4,7 +4,30 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-	<title>{{ $title ?? 'Clinica CORI' }}</title>
+	@php
+		$pageTitle = trim($__env->yieldContent('title')) ?: 'Clínica CORI — Atención médica moderna y confiable';
+		$pageDescription = trim($__env->yieldContent('description')) ?: 'Clínica CORI ofrece atención médica moderna, cercana y confiable, con especialidades médicas, ecografías, cirugías y reserva de citas en línea.';
+		$pageImage = asset('images/HERO.png');
+	@endphp
+	<title>{{ $pageTitle }}</title>
+	<meta name="description" content="{{ $pageDescription }}">
+	<meta name="robots" content="@yield('robots', 'index, follow')">
+	<link rel="canonical" href="{{ url()->current() }}">
+	<link rel="icon" type="image/svg+xml" href="{{ asset('images/favicon.svg') }}">
+	<link rel="alternate icon" href="{{ asset('images/favicon.svg') }}">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Clínica CORI">
+	<meta property="og:locale" content="es_PE">
+	<meta property="og:title" content="{{ $pageTitle }}">
+	<meta property="og:description" content="{{ $pageDescription }}">
+	<meta property="og:url" content="{{ url()->current() }}">
+	<meta property="og:image" content="{{ $pageImage }}">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="{{ $pageTitle }}">
+	<meta name="twitter:description" content="{{ $pageDescription }}">
+	<meta name="twitter:image" content="{{ $pageImage }}">
 
 	<script>
 		(() => {
@@ -16,37 +39,11 @@
 		})();
 	</script>
 
-	<script src="https://cdn.tailwindcss.com"></script>
-	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+	@vite(['resources/css/app.css', 'resources/js/app.js'])
 	<script>
-		tailwind.config = {
-			darkMode: 'class',
-			theme: {
-				extend: {
-					fontFamily: {
-						sans: ['Inter', 'sans-serif'],
-					},
-					colors: {
-						brand: {
-							blue: '#2E2F7F',
-							pink: '#E63E8C',
-							light: '#F8F9FC',
-							dark: '#15173F',
-							soft: '#EEF1FF',
-							mist: '#FFF0F7',
-						},
-					},
-					boxShadow: {
-						glow: '0 24px 70px rgba(46, 47, 127, 0.14)',
-						card: '0 18px 45px rgba(46, 47, 127, 0.1)',
-					},
-				}
-			}
-		};
-
 		function siteShell() {
 			return {
 				darkMode: document.documentElement.classList.contains('dark'),
@@ -80,195 +77,6 @@
 			};
 		}
 	</script>
-	<style>
-		[x-cloak] { display: none !important; }
-
-		*, *::before, *::after {
-			box-sizing: border-box;
-		}
-
-		html,
-		body {
-			width: 100%;
-			min-width: 0;
-			overflow-x: hidden;
-		}
-
-		html {
-			scroll-behavior: smooth;
-		}
-
-		body {
-			font-family: 'Inter', sans-serif;
-			background:
-				radial-gradient(circle at top left, rgba(230, 62, 140, 0.08), transparent 28%),
-				radial-gradient(circle at top right, rgba(46, 47, 127, 0.1), transparent 22%),
-				#F8F9FC;
-		}
-
-		img,
-		picture,
-		svg,
-		video,
-		iframe {
-			max-width: 100%;
-			height: auto;
-			display: block;
-		}
-
-		.glass-panel,
-		.cori-panel {
-			width: 100%;
-			max-width: 100%;
-			min-width: 0;
-		}
-
-		.dark body {
-			background:
-				radial-gradient(circle at top left, rgba(230, 62, 140, 0.08), transparent 28%),
-				radial-gradient(circle at top right, rgba(118, 133, 255, 0.12), transparent 22%),
-				#0D1027;
-		}
-
-		.section-reveal {
-			opacity: 0;
-			transform: translateY(24px);
-			transition: opacity 0.7s ease, transform 0.7s ease;
-		}
-
-		.section-reveal.is-visible {
-			opacity: 1;
-			transform: translateY(0);
-		}
-
-		.glass-panel {
-			background: rgba(255, 255, 255, 0.72);
-			backdrop-filter: blur(16px);
-			-webkit-backdrop-filter: blur(16px);
-		}
-
-		.dark .glass-panel {
-			background: rgba(14, 18, 44, 0.7);
-		}
-
-		.text-balance {
-			text-wrap: balance;
-		}
-
-		/* ── Nav underline animation ─────────────────────── */
-		.nav-link-pill {
-			position: relative;
-		}
-		.nav-link-pill::after {
-			content: '';
-			position: absolute;
-			bottom: 2px;
-			left: 50%;
-			height: 2px;
-			width: 0;
-			transform: translateX(-50%);
-			border-radius: 9999px;
-			background: linear-gradient(90deg, #2E2F7F, #E63E8C);
-			transition: width 0.25s ease;
-		}
-		.nav-link-pill:hover::after,
-		.nav-link-pill.is-active::after {
-			width: 62%;
-		}
-
-		/* ── Form field CSS variables (cambian con .dark en <html>) ── */
-		:root {
-			--fi-bg:          #f8fafc;
-			--fi-bg-focus:    #ffffff;
-			--fi-border:      #e2e8f0;
-			--fi-color:       #0f172a;
-			--fi-placeholder: #94a3b8;
-			--fi-label:       #475569;
-			--fi-scheme:      light;
-			--fi-panel-bg:    #ffffff;
-			--fi-panel-ring:  transparent;
-		}
-		html.dark {
-			--fi-bg:          #1e293b;
-			--fi-bg-focus:    #263348;
-			--fi-border:      #475569;
-			--fi-color:       #f1f5f9;
-			--fi-placeholder: #64748b;
-			--fi-label:       #cbd5e1;
-			--fi-scheme:      dark;
-			--fi-panel-bg:    #1e293b;
-			--fi-panel-ring:  rgba(255,255,255,0.08);
-		}
-
-		/* ── Form panel (card wrapper + inner form container) ─── */
-		.cori-panel {
-			background-color: var(--fi-panel-bg) !important;
-			outline: 1px solid var(--fi-panel-ring);
-			transition: background-color 0.3s ease, outline-color 0.3s ease;
-		}
-
-		/* ── Form field system ─────────────────────────────────── */
-		.cori-label {
-			display: flex;
-			align-items: center;
-			gap: 0.375rem;
-			margin-bottom: 0.5rem;
-			font-size: 0.8125rem;
-			font-weight: 600;
-			color: var(--fi-label);
-			letter-spacing: 0.01em;
-			transition: color 0.3s ease;
-		}
-
-		.cori-input {
-			width: 100%;
-			border-radius: 0.875rem;
-			border: 1.5px solid var(--fi-border);
-			background-color: var(--fi-bg) !important;
-			padding: 0.75rem 1rem;
-			font-size: 0.875rem;
-			line-height: 1.5;
-			color: var(--fi-color) !important;
-			color-scheme: var(--fi-scheme);
-			outline: none;
-			transition: border-color 0.2s ease, box-shadow 0.2s ease,
-			            background-color 0.3s ease, color 0.3s ease;
-		}
-		.cori-input::placeholder {
-			color: var(--fi-placeholder) !important;
-			opacity: 1;
-		}
-		.cori-input:focus {
-			border-color: #E63E8C;
-			background-color: var(--fi-bg-focus) !important;
-			box-shadow: 0 0 0 3px rgba(230, 62, 140, 0.18),
-			            0 0 0 1px rgba(230, 62, 140, 0.35);
-		}
-		.cori-input option {
-			background-color: var(--fi-bg);
-			color: var(--fi-color);
-		}
-		.cori-error {
-			display: block;
-			margin-top: 0.375rem;
-			font-size: 0.75rem;
-			color: #E63E8C;
-			font-weight: 500;
-		}
-
-		@media (prefers-reduced-motion: reduce) {
-			html {
-				scroll-behavior: auto;
-			}
-
-			.section-reveal {
-				opacity: 1;
-				transform: none;
-				transition: none;
-			}
-		}
-	</style>
-
 	@livewireStyles
 </head>
 <body class="min-h-screen text-slate-900 transition-colors duration-300 dark:text-slate-100">
@@ -285,7 +93,7 @@
 
 				{{-- Logo --}}
 				<a href="{{ route('home') }}" class="group flex items-center rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink focus-visible:ring-offset-2">
-					<img src="{{ asset('images/logo-cori.svg') }}" alt="Clinica CORI" class="h-10 w-auto max-w-[150px] transition-transform duration-300 group-hover:scale-[1.02] sm:h-11 sm:max-w-[170px]">
+					<img src="{{ asset('images/logo-cori.svg') }}" alt="Clínica CORI" class="h-10 w-auto max-w-[150px] transition-transform duration-300 group-hover:scale-[1.02] sm:h-11 sm:max-w-[170px]">
 				</a>
 
 				{{-- Desktop navigation --}}
@@ -309,6 +117,18 @@
 
 				{{-- Actions --}}
 				<div class="flex items-center gap-2">
+
+					{{-- Admin login (desktop) --}}
+					<a
+						href="{{ route('login') }}"
+						class="hidden items-center justify-center rounded-xl border border-slate-200/80 bg-white/60 p-2.5 text-slate-500 backdrop-blur-sm transition-all duration-200 hover:border-brand-pink/50 hover:bg-brand-mist hover:text-brand-pink dark:border-white/10 dark:bg-white/5 dark:text-slate-400 dark:hover:border-brand-pink/50 dark:hover:text-brand-pink md:inline-flex"
+						aria-label="Acceso administrativo"
+						title="Acceso administrativo"
+					>
+						<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15.75 9V5.25A3.75 3.75 0 0012 1.5a3.75 3.75 0 00-3.75 3.75V9m-2.25 0h12a2.25 2.25 0 012.25 2.25v8.25a2.25 2.25 0 01-2.25 2.25h-12a2.25 2.25 0 01-2.25-2.25v-8.25A2.25 2.25 0 016 9z" />
+						</svg>
+					</a>
 
 					{{-- Dark mode toggle (desktop) --}}
 					<button
@@ -381,6 +201,12 @@
 					<a href="{{ route('home') }}#contacto"  @click="mobileMenuOpen = false" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-brand-soft hover:text-brand-blue dark:text-slate-200 dark:hover:bg-white/5 dark:hover:text-white">
 						<span class="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-pink"></span>Contacto
 					</a>
+					<a href="{{ route('login') }}" @click="mobileMenuOpen = false" class="mt-2 flex items-center gap-3 rounded-xl border-t border-slate-200/60 px-4 pb-1 pt-4 text-sm font-medium text-slate-500 transition-colors hover:text-brand-pink dark:border-white/10 dark:text-slate-400">
+						<svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15.75 9V5.25A3.75 3.75 0 0012 1.5a3.75 3.75 0 00-3.75 3.75V9m-2.25 0h12a2.25 2.25 0 012.25 2.25v8.25a2.25 2.25 0 01-2.25 2.25h-12a2.25 2.25 0 01-2.25-2.25v-8.25A2.25 2.25 0 016 9z" />
+						</svg>
+						Acceso administrativo
+					</a>
 				</nav>
 				<div class="mt-3 flex items-center justify-between gap-3 border-t border-slate-200/60 pt-3 dark:border-white/10">
 					<a
@@ -414,11 +240,36 @@
 			@yield('content')
 		</main>
 
-		<footer class="mt-24 border-t border-white/50 bg-white/70 py-12 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/75">
+		@unless(request()->is('login') || request()->is('admin/*'))
+			<section class="mx-auto mt-24 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+				<div class="flex flex-col items-center gap-6 rounded-[2rem] bg-gradient-to-r from-brand-blue to-brand-pink px-8 py-12 text-center text-white shadow-glow sm:flex-row sm:justify-between sm:px-12 sm:text-left">
+					<div>
+						<p class="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">¿Lista para tu próxima consulta?</p>
+						<h2 class="mt-3 text-2xl font-extrabold sm:text-3xl">Agenda tu cita en minutos</h2>
+					</div>
+					<a href="{{ route('citas') }}" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-blue shadow-lg transition hover:-translate-y-0.5">
+						<svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+						</svg>
+						Reservar cita
+					</a>
+				</div>
+			</section>
+		@endunless
+
+		@php
+			$footerContact = \App\Models\ContentSection::whereIn('key', ['contact_phone', 'contact_email'])->where('active', true)->get()->keyBy('key');
+			$footerPhone = $footerContact['contact_phone']->contenido ?? '+56 9 1234 5678';
+			$footerEmail = $footerContact['contact_email']->contenido ?? 'contacto@clinicacori.com';
+			$whatsappNumber = '51964278433';
+			$whatsappUrl = 'https://wa.me/' . $whatsappNumber . '?text=' . rawurlencode('Hola, quisiera más información sobre Clínica CORI.');
+		@endphp
+
+		<footer class="mt-16 border-t border-white/50 bg-white/70 py-12 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/75">
 			<div class="mx-auto grid w-full max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
 				<div>
-					<img src="{{ asset('images/logo-cori.svg') }}" alt="Clinica CORI" class="h-14 w-auto sm:h-16">
-					<p class="mt-5 max-w-md text-sm leading-7 text-slate-600 dark:text-slate-300">Atencion medica moderna, cercana y confiable. Disenamos una experiencia clara para que cada paciente se sienta acompanada desde el primer contacto.</p>
+					<img src="{{ asset('images/logo-cori.svg') }}" alt="Clínica CORI" class="h-14 w-auto sm:h-16">
+					<p class="mt-5 max-w-md text-sm leading-7 text-slate-600 dark:text-slate-300">Atención médica moderna, cercana y confiable. Diseñamos una experiencia clara para que cada paciente se sienta acompañada desde el primer contacto.</p>
 				</div>
 
 				<div>
@@ -446,17 +297,47 @@
 							<span class="sr-only">LinkedIn</span>
 							<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.94 8.5H4V20h2.94V8.5zM5.47 4A1.72 1.72 0 103.75 5.72 1.72 1.72 0 005.47 4zM20 12.78C20 9.92 18.48 8.3 16.08 8.3a3.52 3.52 0 00-3.2 1.76V8.5H9.94c.04 1.02 0 11.5 0 11.5h2.94v-6.42c0-.34.02-.69.13-.93a1.93 1.93 0 011.81-1.29c1.28 0 1.79.98 1.79 2.41V20H20v-7.22z" /></svg>
 						</a>
+						<a href="{{ $whatsappUrl }}" target="_blank" rel="noreferrer" class="rounded-full border border-slate-200 p-3 text-slate-600 transition hover:border-[#25D366] hover:text-[#25D366] dark:border-white/10 dark:text-slate-300">
+							<span class="sr-only">WhatsApp</span>
+							<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.05 2C6.514 2 2.03 6.48 2.03 12.01c0 1.762.463 3.484 1.34 4.994L2 22l5.146-1.35a10.03 10.03 0 004.904 1.25h.004c5.535 0 10.02-4.48 10.02-10.01A9.98 9.98 0 0012.05 2zm0 18.15h-.003a8.13 8.13 0 01-4.14-1.135l-.297-.176-3.056.802.816-2.98-.194-.306a8.1 8.1 0 01-1.246-4.348c0-4.483 3.653-8.13 8.146-8.13a8.09 8.09 0 015.751 2.38 8.07 8.07 0 012.386 5.75c0 4.482-3.653 8.148-8.163 8.148z"/></svg>
+						</a>
 					</div>
-					<p class="mt-5 text-sm text-slate-600 dark:text-slate-300">Lunes a viernes, 8:00 a. m. - 7:00 p. m.</p>
+					<div class="mt-6 space-y-2.5 text-sm text-slate-600 dark:text-slate-300">
+						<a href="tel:{{ preg_replace('/[^0-9+]/', '', $footerPhone) }}" class="flex items-center gap-2.5 transition hover:text-brand-pink">
+							<svg class="h-4 w-4 shrink-0 text-brand-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+							{{ $footerPhone }}
+						</a>
+						<a href="mailto:{{ $footerEmail }}" class="flex items-center gap-2.5 transition hover:text-brand-pink">
+							<svg class="h-4 w-4 shrink-0 text-brand-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
+							{{ $footerEmail }}
+						</a>
+						<p class="flex items-center gap-2.5">
+							<svg class="h-4 w-4 shrink-0 text-brand-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+							Lunes a viernes, 8:00 a. m. - 7:00 p. m.
+						</p>
+					</div>
 				</div>
 			</div>
 
-			<div class="mx-auto mt-10 flex w-full max-w-7xl flex-col items-center justify-between gap-3 border-t border-slate-200/70 px-4 pt-6 text-sm text-slate-500 dark:border-white/10 dark:text-slate-400 sm:flex-row sm:px-6 lg:px-8">
-				<p>&copy; {{ date('Y') }} Clinica CORI. Todos los derechos reservados.</p>
-				<p>Disenado para transmitir confianza, claridad y cuidado moderno.</p>
+			<div class="mx-auto mt-10 flex w-full max-w-7xl flex-col items-center justify-center gap-3 border-t border-slate-200/70 px-4 pt-6 text-sm text-slate-500 dark:border-white/10 dark:text-slate-400 sm:flex-row sm:justify-between sm:px-6 lg:px-8">
+				<p>&copy; {{ date('Y') }} Clínica CORI. Todos los derechos reservados.</p>
+				<p>Diseñado para transmitir confianza, claridad y cuidado moderno.</p>
+				<a href="{{ route('login') }}" class="text-slate-400 transition hover:text-brand-pink dark:text-slate-500">Acceso administrativo</a>
 			</div>
 		</footer>
 	</div>
+
+	@unless(request()->is('login') || request()->is('admin/*'))
+		<a
+			href="{{ $whatsappUrl }}"
+			target="_blank"
+			rel="noreferrer"
+			class="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.45)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_14px_36px_rgba(37,211,102,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366]"
+			aria-label="Escríbenos por WhatsApp"
+		>
+			<svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.05 2C6.514 2 2.03 6.48 2.03 12.01c0 1.762.463 3.484 1.34 4.994L2 22l5.146-1.35a10.03 10.03 0 004.904 1.25h.004c5.535 0 10.02-4.48 10.02-10.01A9.98 9.98 0 0012.05 2zm0 18.15h-.003a8.13 8.13 0 01-4.14-1.135l-.297-.176-3.056.802.816-2.98-.194-.306a8.1 8.1 0 01-1.246-4.348c0-4.483 3.653-8.13 8.146-8.13a8.09 8.09 0 015.751 2.38 8.07 8.07 0 012.386 5.75c0 4.482-3.653 8.148-8.163 8.148z"/></svg>
+		</a>
+	@endunless
 
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
@@ -478,6 +359,8 @@
 				return;
 			}
 
+			// threshold bajo: algunas secciones (ej. Servicios) son mas altas que el viewport,
+			// por lo que un threshold alto nunca llega a cumplirse y el contenido queda oculto.
 			const observer = new IntersectionObserver((entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
@@ -485,9 +368,16 @@
 						observer.unobserve(entry.target);
 					}
 				});
-			}, { threshold: 0.18 });
+			}, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
 
-			document.querySelectorAll('.section-reveal').forEach((element) => observer.observe(element));
+			const revealElements = document.querySelectorAll('.section-reveal');
+			revealElements.forEach((element) => observer.observe(element));
+
+			// Salvaguarda: si por algun motivo el observer no revela un elemento, no debe
+			// quedar invisible de forma permanente.
+			window.setTimeout(() => {
+				revealElements.forEach((element) => element.classList.add('is-visible'));
+			}, 4000);
 		});
 	</script>
 

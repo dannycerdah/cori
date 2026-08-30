@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Especialidad;
 use Illuminate\Database\Seeder;
 
 class EspecialidadesSeeder extends Seeder
@@ -21,9 +21,9 @@ class EspecialidadesSeeder extends Seeder
         ];
 
         foreach ($especialidades as $especialidad) {
-            \App\Models\Especialidad::updateOrCreate(
+            Especialidad::updateOrCreate(
                 ['nombre' => $especialidad['nombre']],
-                ['descripcion' => $especialidad['descripcion']]
+                ['descripcion' => $especialidad['descripcion'], 'estado' => true]
             );
         }
     }
